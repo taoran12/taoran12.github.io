@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: SimHei, Verdana, sans-serif;
+  font-family: 16px;
   font-size: 14px;
   line-height: 2;
   color: #555;
@@ -1549,7 +1549,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6bfa58;
+  background: #ff7496;
 }
 .links-of-blogroll {
   font-size: 13px;
