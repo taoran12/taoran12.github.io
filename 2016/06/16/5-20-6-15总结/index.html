@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="排序算法的总结(python实现)冒泡排序冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2123456def Bubble(list):    for i in range(len(list))[::-1]:        for j in range(i):            i">
+<meta name="description" content="写一篇关于自己最近的面试的总结吧，从5月20号开始（嗯 就是记得这么清楚，因为是520！！！），第一家是美团，不知道是不是交通方式选择错误，两个小时才到，也就是说来回用了4个小时，面试被问的很惨，走出来的时候就是一脸懵逼的感觉，面试内容：python的元类python的call init函数的作用多线程，多进程，内存管理快速排序平衡树 红黑树Github多人合作，提交遇到冲突怎么办网络编程进程间通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序总结">
-<meta property="og:url" content="http://tran.github.io/2016/06/14/排序总结/index.html">
+<meta property="og:title" content="5.20-6.15总结">
+<meta property="og:url" content="http://tran.github.io/2016/06/16/5-20-6-15总结/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="排序算法的总结(python实现)冒泡排序冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2123456def Bubble(list):    for i in range(len(list))[::-1]:        for j in range(i):            i">
-<meta property="og:updated_time" content="2016-06-14T14:13:27.000Z">
+<meta property="og:description" content="写一篇关于自己最近的面试的总结吧，从5月20号开始（嗯 就是记得这么清楚，因为是520！！！），第一家是美团，不知道是不是交通方式选择错误，两个小时才到，也就是说来回用了4个小时，面试被问的很惨，走出来的时候就是一脸懵逼的感觉，面试内容：python的元类python的call init函数的作用多线程，多进程，内存管理快速排序平衡树 红黑树Github多人合作，提交遇到冲突怎么办网络编程进程间通">
+<meta property="og:updated_time" content="2016-06-16T06:40:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序总结">
-<meta name="twitter:description" content="排序算法的总结(python实现)冒泡排序冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2123456def Bubble(list):    for i in range(len(list))[::-1]:        for j in range(i):            i">
+<meta name="twitter:title" content="5.20-6.15总结">
+<meta name="twitter:description" content="写一篇关于自己最近的面试的总结吧，从5月20号开始（嗯 就是记得这么清楚，因为是520！！！），第一家是美团，不知道是不是交通方式选择错误，两个小时才到，也就是说来回用了4个小时，面试被问的很惨，走出来的时候就是一脸懵逼的感觉，面试内容：python的元类python的call init函数的作用多线程，多进程，内存管理快速排序平衡树 红黑树Github多人合作，提交遇到冲突怎么办网络编程进程间通">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title> 排序总结 | taoran12 </title>
+  <title> 5.20-6.15总结 | taoran12 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CH">
@@ -249,7 +249,7 @@
             
             
               
-                排序总结
+                5.20-6.15总结
               
             
           </h1>
@@ -261,8 +261,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-14T19:33:28+08:00" content="2016-06-14">
-              2016-06-14
+            <time itemprop="dateCreated" datetime="2016-06-16T14:39:15+08:00" content="2016-06-16">
+              2016-06-16
             </time>
           </span>
 
@@ -292,13 +292,12 @@
       
 
       
-        <h1 id="排序算法的总结-python实现"><a href="#排序算法的总结-python实现" class="headerlink" title="排序算法的总结(python实现)"></a>排序算法的总结(python实现)</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def Bubble(list):</span><br><span class="line">    for i in range(len(list))[::-1]:</span><br><span class="line">        for j in range(i):</span><br><span class="line">            if list[j]&gt;list[j+1]:</span><br><span class="line">                list[j],list[j+1] = list[j+1],list[j]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：就是通过n-i次关键字之间的比较，从n-i+1个记录中选出关键字最小的记录，并和第i个记录交换。<br>时间复杂度分析：最大的特点是交换移动数据的次数相当少，这样就节约了相应的时间，最终的排序时间是比较与交换的时间的和，因此时间复杂度仍然是n^2。<br>应该说，尽管与冒泡排序同为n^2，但是选择排序的性能上还是要略优于冒泡排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def selectSort(list):</span><br><span class="line">    for i in range(len(list)-1):</span><br><span class="line">        min=i</span><br><span class="line">        for j in range(i+1,len(list)):</span><br><span class="line">            if list[min]&gt;list[j]:</span><br><span class="line">                min=j</span><br><span class="line">        if i!=min:</span><br><span class="line">            list[i],list[min] = list[min],list[i]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="快速排序："><a href="#快速排序：" class="headerlink" title="快速排序："></a>快速排序：</h2><p>算法描述：1、先从序列中取出一个数作为基准；<br>2、将比它大的放在右边，比基准小的放在左边；<br>3、再对左右区间重复第二步，直到各区间只有一个数为止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def quikSort(List):</span><br><span class="line">    if len(List)&gt;1:</span><br><span class="line">        qsort(List,0,len(List)-1)</span><br><span class="line"></span><br><span class="line">def qsort(List,start,end):</span><br><span class="line">    base=List[start]</span><br><span class="line">    pl=start</span><br><span class="line">    pr=end</span><br><span class="line">    while pl&lt;pr:</span><br><span class="line">        while pl&lt;pr and List[pr]&gt;=base:</span><br><span class="line">            pr-=1</span><br><span class="line">        if pr==pl:</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            List[pl],List[pr]=List[pr],List[pl]</span><br><span class="line">        while pl&lt;pr and List[pl]&lt;=base:</span><br><span class="line">            pl+=1</span><br><span class="line">        if pr==pl:</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            List[pl], List[pr] = List[pr], List[pl]</span><br><span class="line">    if pl-1&gt;start:</span><br><span class="line">        qsort(List,start,pl-1)</span><br><span class="line">    if pr+1&lt;end:</span><br><span class="line">        qsort(List,pr+1,end)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="插入排序："><a href="#插入排序：" class="headerlink" title="插入排序："></a>插入排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def insertSort(list):</span><br><span class="line">    for i in range(2,len(list)):</span><br><span class="line">        if list[i]&lt;list[i-1]:</span><br><span class="line">            list[0]=list[i];</span><br><span class="line">            j=i-1</span><br><span class="line">            while list[j]&gt;list[0]:</span><br><span class="line">                list[j+1]=list[j]</span><br><span class="line">                j-=1</span><br><span class="line">            list[j+1]=list[0]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure>
+        <p>写一篇关于自己最近的面试的总结吧，从5月20号开始（嗯 就是记得这么清楚，因为是520！！！），第一家是美团，不知道是不是交通方式选择错误，两个小时才到，也就是说来回用了4个小时，面试被问的很惨，走出来的时候就是一脸懵逼的感觉，面试内容：<br>python的元类<br>python的call init函数的作用<br>多线程，多进程，<br>内存管理<br>快速排序<br>平衡树 红黑树<br>Github多人合作，提交遇到冲突怎么办<br>网络编程<br>进程间通信有哪些，管道之类的了解么<br>有关http协议的一个python第三方包（窝没有听说过的，现在名字也不记得了。。。）<br>还有一个关于接口标准的库，也是没有听说过</p>
+<p>这次面试下来，发现了自己的很多不足，因为之前没有任何准备，快速排序都没有回答上来，于是，第二天起找了本大话数据结构，看起了算法，把排序之类的都看了一遍。</p>
+<p>美团一直都没有再联系过我，也就是说明，第一次面试失败了。</p>
+<p>接下来去了百度面试，一面很顺利，面试官问的很基础，都是一些python的基础知识，比如list和set的区别，实现两个列表相加有哪些办法,我说了三个:append(),extend(),list1+list2，等等一些很简单的问题，问到进程的时候，不会还有提示，总之这次面试感觉很轻松，当晚就收到了去二面的通知，于是我真的抱有了能在百度上班的希望，可是再一次证明，不期不待没有伤害，二面又是被问惨了，先是说项目经理，似乎他听了并不满意，然后开始让我写一到编程题，验证ip地址的合法性，我没有用到split()，写了一大推，印象分一定骤然降低。。。之后一道有关给出朋友关系判断有多少个朋友圈的问题，让我写伪代码，写的也不好，所以我又光荣的挂掉了。。。</p>
+<p>我深刻意识到了自己编程能力太差的问题，于是下定决心，每天至少要写100行代码，坚持了几天，正在端午节放假准备回家的前一天晚上，百度另外一个部门联系我去参加面试，问了我：<br>写一个程序判断链表是否闭环<br>实现2的65次方<br>python的内存管理<br>内存泄漏<br>多线程<br>数据库实现：姓名，课程，成绩，要求得到所有课程都大于85分的人名<br>面完我就直接回家了，百度到现在也没联系我，真是被他伤害掉好多自信心</p>
+<p>从家来学校第二天参加了一个面试，做测试的，根本没有问我啥，直接第二天让我上班，我回答再考虑考虑<br>第二天一天我参加了三个面试，第一家，先是做了份笔试题，好多都是网络安全的知识，答完之后面试主要问了我项目和Django的知识，今天是第二天没有得到通知，不知道是不是挂了。<br>下午面试的第一家，是redhat，先是一个小时做一份题，全英文，第一部分是linux，她先是问我会不会linux，我说会使用简单的命令，她说好那你做吧，然后我一看题，完全懵逼，简直神难啊。。。。。完全不会，我就把后面python和算法我会的做了，两个面试官分别问我，还让我说英语。。。我再一次感受到了自己的英语口语是多么的差。。。第二个面试官和我聊了很多非技术（嗯！其实这个我擅长）～<br>约好的四点参加另一个面试，但是红帽4点半才完，我从知春里到鼓楼又要一个小时，也就是说我迟到了一个半小时，但是面试很顺利，问了我项目，http协议，数据库除了mysql其他的是否了解，面完当场就说我周一可以来上班了，是python岗，我挺想去的。<br>今天一早上红帽来电话说要我了，福利是有人带我，有实习生的培养计划，听起来挺诱人，于是又开始纠结，工资都差不多，都挺少。。就看哪个能学到更多的东西吧。<br>总结经验：算法很重要，基础很重要，要坚持每天至少100行，多刷算法！！！</p>
 
       
     </div>
@@ -323,17 +322,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/06/leetcode-121/" rel="next" title="leetcode 121">
-                <i class="fa fa-chevron-left"></i> leetcode 121
+              <a href="/2016/06/14/深复制与浅复制的区别/" rel="next" title="深复制与浅复制的区别">
+                <i class="fa fa-chevron-left"></i> 深复制与浅复制的区别
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/14/深复制与浅复制的区别/" rel="prev" title="深复制与浅复制的区别">
-                深复制与浅复制的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#排序算法的总结-python实现"><span class="nav-number">1.</span> <span class="nav-text">排序算法的总结(python实现)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序："><span class="nav-number">1.3.</span> <span class="nav-text">快速排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序："><span class="nav-number">1.4.</span> <span class="nav-text">插入排序：</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
         </section>
