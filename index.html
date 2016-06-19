@@ -392,18 +392,12 @@
 
       
         
-          
-            <h1 id="首先说一下python的内存管理"><a href="#首先说一下python的内存管理" class="headerlink" title="首先说一下python的内存管理"></a>首先说一下python的内存管理</h1><p>变量在第一次赋值时自动声明，在创建也就是赋值的时候，解释器会根据语法和右侧的操作数来决定对象的类型。<br>引用计数器：一个内部跟踪变量<br>引用计数：每一个变量各有多少个引用<br>当对象被创建并（将其引用）赋值给变量时，该对象的引用计数就被设置为1<br><code>x=3.14</code><br>这个语句创建了浮点型对象并将引用赋值给了x，x是第一个引用，该对象的引用计数为1<br>当一个对象（的引用）又被赋值到其他变量，或做参数传递等，该对象的一个新的引用（或叫别名）被创建，该对象的引用计数自动＋1.<br>以下都会增加引用计数：<br>    <code>y=x</code><br>    <code>foo(x)</code><br>    <code>mylist=[1,2,x,&#39;a&#39;]</code></p>
-<p>比如:<br><code>a=[1,2,3,4,5]
-b=a
-b[0]=9</code><br>输出a，b都变成了[9,2,3,4,5]</p>
-<hr>
-<h1 id="python的复制"><a href="#python的复制" class="headerlink" title="python的复制"></a>python的复制</h1><p>从上面可见，对象的赋值实际上是对象的引用，当创建一个对象，然后把它赋值给另一个变量的时候，pyhton并没有拷贝这个对象，而只是拷贝了这个对象的引用</p>
-<h2 id="如果你想改变一个对象，而且想让原始的对象不受影响，那就需要对象复制"><a href="#如果你想改变一个对象，而且想让原始的对象不受影响，那就需要对象复制" class="headerlink" title="如果你想改变一个对象，而且想让原始的对象不受影响，那就需要对象复制"></a>如果你想改变一个对象，而且想让原始的对象不受影响，那就需要对象复制</h2><p>1、使用切片操作[:]进行拷贝<br>2、使用工厂函数（如list/dir/set）等进行拷贝<br>3、copy.copy()<br>比如：<br><code>a=[1,2,3,4,5]
-b=a[:]
-b[1]=9</code><br>输出a[1,2,3,4,5]<br>输出b[1,9,3,4,5]</p>
-
-          
+          <h1 id="首先说一下python的内存管理"><a href="#首先说一下python的内存管理" class="headerlink" title="首先说一下python的内存管理"></a>首先说一下python的内存管理</h1><p>变量在第一次赋值时自动声明，在创建也就是赋值的时候，解释器会根据语法和右侧的操作数来决定对象的类型。<br>引用计数器：一个内部跟踪变量<br>引用计数：每一个变量各有多少个引用<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/14/深复制与浅复制的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -495,16 +489,12 @@ b[1]=9</code><br>输出a[1,2,3,4,5]<br>输出b[1,9,3,4,5]</p>
 
       
         
-          
-            <h1 id="排序算法的总结-python实现"><a href="#排序算法的总结-python实现" class="headerlink" title="排序算法的总结(python实现)"></a>排序算法的总结(python实现)</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def Bubble(list):</span><br><span class="line">    for i in range(len(list))[::-1]:</span><br><span class="line">        for j in range(i):</span><br><span class="line">            if list[j]&gt;list[j+1]:</span><br><span class="line">                list[j],list[j+1] = list[j+1],list[j]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：就是通过n-i次关键字之间的比较，从n-i+1个记录中选出关键字最小的记录，并和第i个记录交换。<br>时间复杂度分析：最大的特点是交换移动数据的次数相当少，这样就节约了相应的时间，最终的排序时间是比较与交换的时间的和，因此时间复杂度仍然是n^2。<br>应该说，尽管与冒泡排序同为n^2，但是选择排序的性能上还是要略优于冒泡排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def selectSort(list):</span><br><span class="line">    for i in range(len(list)-1):</span><br><span class="line">        min=i</span><br><span class="line">        for j in range(i+1,len(list)):</span><br><span class="line">            if list[min]&gt;list[j]:</span><br><span class="line">                min=j</span><br><span class="line">        if i!=min:</span><br><span class="line">            list[i],list[min] = list[min],list[i]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="快速排序："><a href="#快速排序：" class="headerlink" title="快速排序："></a>快速排序：</h2><p>算法描述：1、先从序列中取出一个数作为基准；<br>2、将比它大的放在右边，比基准小的放在左边；<br>3、再对左右区间重复第二步，直到各区间只有一个数为止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def quikSort(List):</span><br><span class="line">    if len(List)&gt;1:</span><br><span class="line">        qsort(List,0,len(List)-1)</span><br><span class="line"></span><br><span class="line">def qsort(List,start,end):</span><br><span class="line">    base=List[start]</span><br><span class="line">    pl=start</span><br><span class="line">    pr=end</span><br><span class="line">    while pl&lt;pr:</span><br><span class="line">        while pl&lt;pr and List[pr]&gt;=base:</span><br><span class="line">            pr-=1</span><br><span class="line">        if pr==pl:</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            List[pl],List[pr]=List[pr],List[pl]</span><br><span class="line">        while pl&lt;pr and List[pl]&lt;=base:</span><br><span class="line">            pl+=1</span><br><span class="line">        if pr==pl:</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            List[pl], List[pr] = List[pr], List[pl]</span><br><span class="line">    if pl-1&gt;start:</span><br><span class="line">        qsort(List,start,pl-1)</span><br><span class="line">    if pr+1&lt;end:</span><br><span class="line">        qsort(List,pr+1,end)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="插入排序："><a href="#插入排序：" class="headerlink" title="插入排序："></a>插入排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def insertSort(list):</span><br><span class="line">    for i in range(2,len(list)):</span><br><span class="line">        if list[i]&lt;list[i-1]:</span><br><span class="line">            list[0]=list[i];</span><br><span class="line">            j=i-1</span><br><span class="line">            while list[j]&gt;list[0]:</span><br><span class="line">                list[j+1]=list[j]</span><br><span class="line">                j-=1</span><br><span class="line">            list[j+1]=list[0]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure>
-
-          
+          <h1 id="排序算法的总结-python实现"><a href="#排序算法的总结-python实现" class="headerlink" title="排序算法的总结(python实现)"></a>排序算法的总结(python实现)</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def Bubble(list):</span><br><span class="line">    for i in range(len(list))[::-1]:</span><br><span class="line">        for j in range(i):</span><br><span class="line">            if list[j]&gt;list[j+1]:</span><br><span class="line">                list[j],list[j+1] = list[j+1],list[j]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/14/排序总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
