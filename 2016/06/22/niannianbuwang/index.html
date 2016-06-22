@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="排序算法的总结(python实现)冒泡排序冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2123456def Bubble(list):    for i in range(len(list))[::-1]:        for j in range(i):            i">
+<meta name="description" content="今天是在vipkid实习的第三天，公司的整体氛围喔很喜欢，很庆幸被全公司最帅的RD带，于是他成为了我的男神mentor，在他朋友圈发现了他的知乎id，于是跑去知乎一看，发现此人我以前关注过，并且认为颇有个性和文采，于是感叹世界之小，他面试了我，又成为了我的mentor，长得帅，身上有纹身，这些都使得我对他不经意间多了许多关注，从他的知乎知道了他的微博，从他的微博找到了他的个人博客，里面有很多他之前">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序总结">
-<meta property="og:url" content="http://tran.github.io/2016/06/14/排序总结/index.html">
+<meta property="og:title" content="niannianbuwang">
+<meta property="og:url" content="http://tran.github.io/2016/06/22/niannianbuwang/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="排序算法的总结(python实现)冒泡排序冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2123456def Bubble(list):    for i in range(len(list))[::-1]:        for j in range(i):            i">
-<meta property="og:updated_time" content="2016-06-19T13:29:37.000Z">
+<meta property="og:description" content="今天是在vipkid实习的第三天，公司的整体氛围喔很喜欢，很庆幸被全公司最帅的RD带，于是他成为了我的男神mentor，在他朋友圈发现了他的知乎id，于是跑去知乎一看，发现此人我以前关注过，并且认为颇有个性和文采，于是感叹世界之小，他面试了我，又成为了我的mentor，长得帅，身上有纹身，这些都使得我对他不经意间多了许多关注，从他的知乎知道了他的微博，从他的微博找到了他的个人博客，里面有很多他之前">
+<meta property="og:updated_time" content="2016-06-22T12:21:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序总结">
-<meta name="twitter:description" content="排序算法的总结(python实现)冒泡排序冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2123456def Bubble(list):    for i in range(len(list))[::-1]:        for j in range(i):            i">
+<meta name="twitter:title" content="niannianbuwang">
+<meta name="twitter:description" content="今天是在vipkid实习的第三天，公司的整体氛围喔很喜欢，很庆幸被全公司最帅的RD带，于是他成为了我的男神mentor，在他朋友圈发现了他的知乎id，于是跑去知乎一看，发现此人我以前关注过，并且认为颇有个性和文采，于是感叹世界之小，他面试了我，又成为了我的mentor，长得帅，身上有纹身，这些都使得我对他不经意间多了许多关注，从他的知乎知道了他的微博，从他的微博找到了他的个人博客，里面有很多他之前">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title> 排序总结 | taoran12 </title>
+  <title> niannianbuwang | taoran12 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +249,7 @@
             
             
               
-                排序总结
+                niannianbuwang
               
             
           </h1>
@@ -261,8 +261,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-14T19:33:28+08:00" content="2016-06-14">
-              2016-06-14
+            <time itemprop="dateCreated" datetime="2016-06-22T19:56:12+08:00" content="2016-06-22">
+              2016-06-22
             </time>
           </span>
 
@@ -292,14 +292,10 @@
       
 
       
-        <h1 id="排序算法的总结-python实现"><a href="#排序算法的总结-python实现" class="headerlink" title="排序算法的总结(python实现)"></a>排序算法的总结(python实现)</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序：是一种交换排序，他的基本思想是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。最好的情况下，时间复杂度是n，最坏的时间复杂度时n^2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def Bubble(list):</span><br><span class="line">    for i in range(len(list))[::-1]:</span><br><span class="line">        for j in range(i):</span><br><span class="line">            if list[j]&gt;list[j+1]:</span><br><span class="line">                list[j],list[j+1] = list[j+1],list[j]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<hr>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序：就是通过n-i次关键字之间的比较，从n-i+1个记录中选出关键字最小的记录，并和第i个记录交换。<br>时间复杂度分析：最大的特点是交换移动数据的次数相当少，这样就节约了相应的时间，最终的排序时间是比较与交换的时间的和，因此时间复杂度仍然是n^2。<br>应该说，尽管与冒泡排序同为n^2，但是选择排序的性能上还是要略优于冒泡排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def selectSort(list):</span><br><span class="line">    for i in range(len(list)-1):</span><br><span class="line">        min=i</span><br><span class="line">        for j in range(i+1,len(list)):</span><br><span class="line">            if list[min]&gt;list[j]:</span><br><span class="line">                min=j</span><br><span class="line">        if i!=min:</span><br><span class="line">            list[i],list[min] = list[min],list[i]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="快速排序："><a href="#快速排序：" class="headerlink" title="快速排序："></a>快速排序：</h2><p>算法描述：1、先从序列中取出一个数作为基准；<br>2、将比它大的放在右边，比基准小的放在左边；<br>3、再对左右区间重复第二步，直到各区间只有一个数为止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def quikSort(List):</span><br><span class="line">    if len(List)&gt;1:</span><br><span class="line">        qsort(List,0,len(List)-1)</span><br><span class="line"></span><br><span class="line">def qsort(List,start,end):</span><br><span class="line">    base=List[start]</span><br><span class="line">    pl=start</span><br><span class="line">    pr=end</span><br><span class="line">    while pl&lt;pr:</span><br><span class="line">        while pl&lt;pr and List[pr]&gt;=base:</span><br><span class="line">            pr-=1</span><br><span class="line">        if pr==pl:</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            List[pl],List[pr]=List[pr],List[pl]</span><br><span class="line">        while pl&lt;pr and List[pl]&lt;=base:</span><br><span class="line">            pl+=1</span><br><span class="line">        if pr==pl:</span><br><span class="line">            break</span><br><span class="line">        else:</span><br><span class="line">            List[pl], List[pr] = List[pr], List[pl]</span><br><span class="line">    if pl-1&gt;start:</span><br><span class="line">        qsort(List,start,pl-1)</span><br><span class="line">    if pr+1&lt;end:</span><br><span class="line">        qsort(List,pr+1,end)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="插入排序："><a href="#插入排序：" class="headerlink" title="插入排序："></a>插入排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def insertSort(list):</span><br><span class="line">    for i in range(2,len(list)):</span><br><span class="line">        if list[i]&lt;list[i-1]:</span><br><span class="line">            list[0]=list[i];</span><br><span class="line">            j=i-1</span><br><span class="line">            while list[j]&gt;list[0]:</span><br><span class="line">                list[j+1]=list[j]</span><br><span class="line">                j-=1</span><br><span class="line">            list[j+1]=list[0]</span><br><span class="line">    return list</span><br></pre></td></tr></table></figure>
+        <p>今天是在vipkid实习的第三天，公司的整体氛围喔很喜欢，很庆幸被全公司最帅的RD带，于是他成为了我的男神mentor，在他朋友圈发现了他的知乎id，于是跑去知乎一看，发现此人我以前关注过，并且认为颇有个性和文采，于是感叹世界之小，他面试了我，又成为了我的mentor，长得帅，身上有纹身，这些都使得我对他不经意间多了许多关注，从他的知乎知道了他的微博，从他的微博找到了他的个人博客，里面有很多他之前写的算是日记的东东，其中有一条博客里有他技术博客的链接，点进去，于是乎，发现了他的facebook，github，tweeter，linkin等等的账号，知道了她大学时候女朋友的名字，就是没查出来现在他是否单身，我也是服了自己的扒人水平，这几天都是在很兴奋的状态下过去的，觉得每天可以去上班学东西赚钱还可以见男神真的好开心，可是开心之后是我的压力和顾虑，他有布置任务给我，我表示做起来挺费劲的，他很忙，就算他不忙我也不好意思找他，所以说，我得多下些功夫了，坐我旁边的小罗今天就要离职了，看的出大家都很喜欢他，我也一样喜欢她，今天他们给小罗去开欢送会，晚上一起吃饭去了，没有叫我们几个新来的实习生，其实我知道我们是新来的，不叫我根本提不出来什么，但是却有一种想哭的感觉，尤其是当自己认为是男神mentor发钉钉说他们给小罗罗欢送去了，我可以早点回去了。感觉自己什么都不是，我好希望，等我离开这家公司的时候，他们也一样会为我欢送，我知道自己没有什么实力，却还喜欢比较，这样不好，嗯这样不好。</p>
+<p>以上算是我的情感经历吧，有激动，有羡慕，有压力，有挫败感，却也还有争取进步的渴望。</p>
+<p>我想我还是不要想太多，不论现在公司对我有多么的不在乎，再说在回答我的问题上他们对我还是很好的，这也就够了，至于别的还是不要在乎了，毕竟我就是为了能够多学东西，至于男神什么的能让自己开心就好，根本不必太认真好吗？</p>
+<p>接下来一篇博客是该总结一下这几天学的新技术了！</p>
 
       
     </div>
@@ -324,17 +320,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/06/leetcode-121/" rel="next" title="leetcode 121">
-                <i class="fa fa-chevron-left"></i> leetcode 121
+              <a href="/2016/06/19/用python实现链表/" rel="next" title="用python实现链表">
+                <i class="fa fa-chevron-left"></i> 用python实现链表
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/14/深复制与浅复制的区别/" rel="prev" title="深复制与浅复制的区别">
-                深复制与浅复制的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,7 +453,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#排序算法的总结-python实现"><span class="nav-number">1.</span> <span class="nav-text">排序算法的总结(python实现)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序："><span class="nav-number">1.3.</span> <span class="nav-text">快速排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序："><span class="nav-number">1.4.</span> <span class="nav-text">插入排序：</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
