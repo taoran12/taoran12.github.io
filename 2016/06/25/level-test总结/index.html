@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,leetcode," />
+  <meta name="keywords" content="项目," />
 
 
 
@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="121. Best Time to Buy and Sell StockSay you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transaction (ie, buy one">
+<meta name="description" content="来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。
+大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 121">
-<meta property="og:url" content="http://tran.github.io/2016/06/06/leetcode-121/index.html">
+<meta property="og:title" content="level-test总结">
+<meta property="og:url" content="http://tran.github.io/2016/06/25/level-test总结/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="121. Best Time to Buy and Sell StockSay you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transaction (ie, buy one">
-<meta property="og:updated_time" content="2016-06-06T12:09:44.000Z">
+<meta property="og:description" content="来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。
+大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到git">
+<meta property="og:updated_time" content="2016-06-25T03:06:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode 121">
-<meta name="twitter:description" content="121. Best Time to Buy and Sell StockSay you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transaction (ie, buy one">
+<meta name="twitter:title" content="level-test总结">
+<meta name="twitter:description" content="来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。
+大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到git">
 
 
 
@@ -132,7 +132,7 @@ If you were only permitted to complete at most one transaction (ie, buy one">
   };
 </script>
 
-  <title> leetcode 121 | taoran12 </title>
+  <title> level-test总结 | taoran12 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +252,7 @@ If you were only permitted to complete at most one transaction (ie, buy one">
             
             
               
-                leetcode 121
+                level-test总结
               
             
           </h1>
@@ -264,8 +264,8 @@ If you were only permitted to complete at most one transaction (ie, buy one">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-06T11:20:59+08:00" content="2016-06-06">
-              2016-06-06
+            <time itemprop="dateCreated" datetime="2016-06-25T10:22:04+08:00" content="2016-06-25">
+              2016-06-25
             </time>
           </span>
 
@@ -295,25 +295,8 @@ If you were only permitted to complete at most one transaction (ie, buy one">
       
 
       
-        <h1 id="121-Best-Time-to-Buy-and-Sell-Stock"><a href="#121-Best-Time-to-Buy-and-Sell-Stock" class="headerlink" title="121. Best Time to Buy and Sell Stock"></a>121. Best Time to Buy and Sell Stock</h1><p><em>Say you have an array for which the ith element is the price of a given stock on day i.</em></p>
-<p><em>If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def maxProfit(self, prices):
-        &quot;&quot;&quot;
-        :type prices: List[int]
-        :rtype: int
-        &quot;&quot;&quot;
-        maxnum=0
-        if len(prices)&lt;=1:
-            return 0
-        minnum=prices[0]
-        for i in range(len(prices)):
-            minnum=min(minnum,prices[i])
-            maxnum=max(maxnum,prices[i]-minnum)
-        return maxnum
-</code></pre><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=29497924&auto=0&height=66"></iframe>
-
+        <p>来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。</p>
+<p>大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到gitlab上，通过之后再写下一个，首先是在database中建立一个dev.sql,我模仿着IT-Test的样子，建立了level_test_result表,<br>在提交之前，先把虚拟环境搭好 测试和格式看是否可以通过在提交<br>    virtualenv venv<br>    source venv/bin/activate<br>    make pip<br>    cp .env.example .env 把.env 中的参数配置好<br>    make test<br>    make lint<br>然后提交，提交时用的命令：<br>    git status看看有哪些修改过却没有add的<br>    git add <file><br>    git commit 这条命令会进入vim模式 写一些问题和解决之类的描述<br>    git push origin master -f(之后建立了dev分支)<br>打开gitlab 添加一个request，然后把它再填入mr，提交，@mayue，这样他会检查是否可以通过<br>如果马越那里有了新的改进，那么首先是要先git remote add upstream <internal的ssh><br>    git fetch upstream<br>    git rebase ……这里之后补<br>    第一次提交肯定是有各种问题啦。。。在耐心的马越的指导下，我进行了修改，这次建表遇到的坑有：表名起名为level_test_result，mobile是varchar型，起始结束时间是timestamp NOT NULL<br>    好啦，第一次提交通过了，因为commit了好几次，马越说让我把他合为一次<br>    git log<br>    把最先commit的那个之前的一个复制下来，<br>    git rebase -i &lt;之前复制的那个&gt;<br>    进入vim模式，把之后commit的前面的改为s<br>    git push origin dev -f<br>    接下来实现第二步<br>    首先写model层<br>    这里主要是一些命名规则需要注意<br>    然后写test_level_test_result.py 做测试用的<br>    assert是断言的意思<br>    近台呢是周六，应该会写view层。。。<br>    我觉得我能遇到马越，真的是我的幸运～</internal的ssh></file></p>
 
       
     </div>
@@ -335,9 +318,7 @@ If you were only permitted to complete at most one transaction (ie, buy one">
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+            <a href="/tags/项目/" rel="tag">#项目</a>
           
         </div>
       
@@ -346,17 +327,13 @@ If you were only permitted to complete at most one transaction (ie, buy one">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/05/leetcode-88/" rel="next" title="leetcode 88">
-                <i class="fa fa-chevron-left"></i> leetcode 88
+              <a href="/2016/06/22/git使用总结/" rel="next" title="git使用总结">
+                <i class="fa fa-chevron-left"></i> git使用总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/14/排序总结/" rel="prev" title="排序总结">
-                排序总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,7 +460,7 @@ If you were only permitted to complete at most one transaction (ie, buy one">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#121-Best-Time-to-Buy-and-Sell-Stock"><span class="nav-number">1.</span> <span class="nav-text">121. Best Time to Buy and Sell Stock</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
