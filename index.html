@@ -296,9 +296,9 @@
       
         
           
-            <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	| project_name | project_function | system_involved |</span><br><span class="line">	| -------- | -------- | --------| </span><br><span class="line">	| cell 1 | cell 2 | cell3 |</span><br><span class="line">	| project_name | project_function | system_involved |</span><br><span class="line">	| -------- | -------- | --------|   </span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"> 于是我很费劲的写成了这样：</span><br></pre></td></tr></table></figure></p>
+            <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    | project_name | project_function | system_involved |</span><br><span class="line">	| -------- | -------- | --------| </span><br><span class="line">	| cell 1 | cell 2 | cell3 |</span><br><span class="line">	| project_name | project_function | system_involved |</span><br><span class="line">	| -------- | -------- | --------|   </span><br><span class="line">```       </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">于是我很费劲的写成了这样：</span><br></pre></td></tr></table></figure></p>
 <pre><code>body1 = &apos;|&apos;+ &apos;project_name&apos; +&apos;|&apos;+ &apos;project_function&apos;+ &apos;|&apos;+&apos;system_involved&apos;+&apos;|&apos;+&apos;database_changes&apos;+&apos;|&apos;+&apos;permissions_modify&apos;+&apos;|&apos;+&apos;people_concerned&apos;+&apos;|&apos;+&apos;testing_concerns&apos;+&apos;|&apos;+&apos;scheduled_launch_time&apos;+&apos;|&apos;+&apos;remind_somebody&apos;+&apos;|&apos; +&apos;\n&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;--------&apos;+&apos;|&apos;+&apos;\n&apos;+&apos;|&apos;+ project_name+&apos;|&apos;+project_function+&apos;|&apos;+system_involved+&apos;|&apos;+database_changes+&apos;|&apos;+permissions_modify+&apos;|&apos;+people_concerned+&apos;|&apos;+testing_concerns+&apos;|&apos;+scheduled_launch_time+&apos;|&apos;+remind_somebody+&apos;|   
-</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">就是这样用字符串拼接的方式，虽然能够实现功能，但是真的不好些，而且也不好看，马越看后，先是让我写成一个模版，即建立一个新的文件，然后import，这是一方面，更重要的是体会到了三个引号的强大，完全可以想如下这样写啊。三个引号是可以保留空行的，当马越跟我说可以这样的时候，瞬间一阵风吹来似的，自己好蠢的写了好久，结果其实是可以直接复制过来的。</span><br></pre></td></tr></table></figure>
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">就是这样用字符串拼接的方式，虽然能够实现功能，但是真的不好些，而且也不好看，马越看后，先是让我写成一个模版，即建立一个新的文件，然后import，这是一方面，更重要的是体会到了三个引号的强大，完全可以想如下这样写啊。三个引号是可以保留空行的，当马越跟我说可以这样的时候，瞬间一阵风吹来似的，自己好蠢的写了好久，结果其实是可以直接复制过来的。</span><br></pre></td></tr></table></figure>
 <pre><code># coding: utf-8
 
 
@@ -314,7 +314,7 @@ comment_template = u&apos;&apos;&apos;\
 | 测试关注点 | {checking_point} |
 | 计划上线时间| {scheduled_launch_time} |
 | 提醒某人 | {remind_somebody} |&apos;&apos;&apos;      
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">view中这样：用string.format（)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">view中这样：用string.format（)</span><br></pre></td></tr></table></figure>
 <pre><code>body = template.comment_template.format(
         project_name=project_name,
         project_function=project_function,
@@ -325,7 +325,7 @@ comment_template = u&apos;&apos;&apos;\
         checking_point=checking_point,
         scheduled_launch_time=scheduled_launch_time,
         remind_somebody=remind_somebody)   
-</code></pre><p>```</p>
+</code></pre><p>```  </p>
 
           
         
