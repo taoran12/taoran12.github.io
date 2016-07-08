@@ -251,6 +251,197 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/08/三个引号/" itemprop="url">
+                  三个引号
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-08T20:44:35+08:00" content="2016-07-08">
+              2016-07-08
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格 | project_name | project_function | system_involved |<br> | ——– | ——– | ——–|<br>| cell 1 | cell 2 | cell3 |<br>| project_name | project_function | system_involved |<br> | ——– | ——– | ——–|<br> 于是我很费劲的写成了这样：<br> body1 = ‘|’+ ‘project_name’ +’|’+ ‘project_function’+ ‘|’+’system_involved’+’|’+’database_changes’+’|’+’permissions_modify’+’|’+’people_concerned’+’|’+’testing_concerns’+’|’+’scheduled_launch_time’+’|’+’remind_somebody’+’|’ +’\n’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’——–’+’|’+’\n’+’|’+ project_name+’|’+project_function+’|’+system_involved+’|’+database_changes+’|’+permissions_modify+’|’+people_concerned+’|’+testing_concerns+’|’+scheduled_launch_time+’|’+remind_somebody+’|就是这样用字符串拼接的方式，虽然能够实现功能，但是真的不好些，而且也不好看，马越看后，先是让我写成一个模版，即建立一个新的文件，然后import，这是一方面，更重要的是体会到了三个引号的强大，完全可以想如下这样写啊。三个引号是可以保留空行的，当马越跟我说可以这样的时候，瞬间一阵风吹来似的，自己好蠢的写了好久，结果其实是可以直接复制过来的。</p>
+<p>`# coding: utf-8</p>
+<p>comment_template = u’’’\<br>| header 1 | header 2 |<br>| ——– | ——– |<br>| 测试项目名称 | {project_name}|<br>| 测试功能 | {project_function}|<br>| 提测涉及系统 | {system_involved} |<br>| 是否有数据库修改 | {need_to_change_db_schema}|<br>| 是否有权限修改 | {need_to_change_permissions} |<br>| 涉及人员 | {developers} |<br>| 测试关注点 | {checking_point} |<br>| 计划上线时间| {scheduled_launch_time} |<br>| 提醒某人 | {remind_somebody} |’’’<br><code>view中这样：用string.format（）</code><br>body = template.comment_template.format(<br>        project_name=project_name,<br>        project_function=project_function,<br>        system_involved=system_involved,<br>        need_to_change_db_schema=need_to_change_db_schema,<br>        need_to_change_permissions=need_to_change_permissions,<br>        developers=developers,<br>        checking_point=checking_point,<br>        scheduled_launch_time=scheduled_launch_time,<br>        remind_somebody=remind_somebody)<br>`</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/04/需要做的/" itemprop="url">
+                  需要做的
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-04T21:42:53+08:00" content="2016-07-04">
+              2016-07-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/04/第三周的第一天/" itemprop="url">
                   第三周的第一天
                 </a>
@@ -1036,215 +1227,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/05/leetcode-169/" itemprop="url">
-                  leetcode 169
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-05T21:10:15+08:00" content="2016-06-05">
-              2016-06-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="169-Majority-Element"><a href="#169-Majority-Element" class="headerlink" title="169. Majority Element"></a>169. Majority Element</h1><p><em>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</em></p>
-<p><em>You may assume that the array is non-empty and the majority element always exist in the array.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def majorityElement(self, nums):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: int
-        &quot;&quot;&quot;
-        nums.sort()
-        return nums[len(nums)/2]
-</code></pre><p><strong>先排序，因为题目说了这个大多数一定存在 那么这个数一定在中间位置上，用心体会，感觉很巧妙！</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/05/leetcode-217/" itemprop="url">
-                  leetcode 217
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-05T19:44:51+08:00" content="2016-06-05">
-              2016-06-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217. Contains Duplicate"></a>217. Contains Duplicate</h1><p><em>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array,and it should return false if every element is distinct.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def containsDuplicate(self, nums):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: bool
-        &quot;&quot;&quot;
-        return len(set(nums))&lt;len(nums)
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1290,7 +1272,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
