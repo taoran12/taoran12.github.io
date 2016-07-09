@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构," />
+  <meta name="keywords" content="项目," />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="以下程序是实现链表的一些简单操作：">
+<meta name="description" content="今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好lea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用python实现链表">
-<meta property="og:url" content="http://tran.github.io/2016/06/19/用python实现链表/index.html">
+<meta property="og:title" content="arctic-ocean总结">
+<meta property="og:url" content="http://tran.github.io/2016/07/09/arctic-ocean总结/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="以下程序是实现链表的一些简单操作：">
-<meta property="og:updated_time" content="2016-06-19T13:26:20.000Z">
+<meta property="og:description" content="今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好lea">
+<meta property="og:updated_time" content="2016-07-09T14:47:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用python实现链表">
-<meta name="twitter:description" content="以下程序是实现链表的一些简单操作：">
+<meta name="twitter:title" content="arctic-ocean总结">
+<meta name="twitter:description" content="今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好lea">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title> 用python实现链表 | taoran12 </title>
+  <title> arctic-ocean总结 | taoran12 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +249,7 @@
             
             
               
-                用python实现链表
+                arctic-ocean总结
               
             
           </h1>
@@ -261,8 +261,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-19T21:21:04+08:00" content="2016-06-19">
-              2016-06-19
+            <time itemprop="dateCreated" datetime="2016-07-09T18:16:59+08:00" content="2016-07-09">
+              2016-07-09
             </time>
           </span>
 
@@ -292,155 +292,14 @@
       
 
       
-        <h1 id="以下程序是实现链表的一些简单操作："><a href="#以下程序是实现链表的一些简单操作：" class="headerlink" title="以下程序是实现链表的一些简单操作："></a>以下程序是实现链表的一些简单操作：</h1><a id="more"></a>
-<pre><code>class Node(object):
-    def __init__(self,val,p=0):
-        self.data = val
-        self.next = p
+        <p>今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好leader。。。我遇见这样的leader，是我的幸运～<br>这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。<br>这个项目设计一下知识点：<br>1、http/api     </p>
+<p><1>首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token<br>比如这样的url：code.vipkid.com.cn/lib/api/groups?private_token=R7sdfhef-d5jZQ6sfjwR</1></p>
+<p><2>请求用的是requests，马越说这个是业界口碑很好的，什么urllib之类的不如这个好<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(url)</span><br><span class="line">response.json()      </span><br><span class="line">r = requests.post(url, data=&#123;<span class="string">'body'</span>: body&#125;)</span><br></pre></td></tr></table></figure></2></p>
+<p>2、markdown<br>markdown其实就是一个字符串，可以在编辑器里传入一个字符串，然后会解析成markdown的格式，刚开始我用的就是字符串拼接的方式，在上篇博客中有所介绍，后来用了三个引号，虽然本质相同，但是方便很多，专门建一个模版，然后导入，使用string({key}).format(key=value)<br>3、python web<br>当然这是web开发项目，设计到表单之类的知识。<br>4、e-mail<br>邮件部分是学长写的，我直接导入调用就行了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from envelopes import Envelope   </span><br><span class="line">```   </span><br><span class="line"></span><br><span class="line">通过这次项目，学到很多有关编程优雅发面的东西：   </span><br><span class="line">&lt;1&gt;关于url的命名，最好是要让人能够通过url看出这一个页面时用来做什么的  比如：   </span><br><span class="line">```   </span><br><span class="line">@bp.route(&apos;/group/&lt;id&gt;/projects&apos;) </span><br><span class="line">@bp.route(&apos;/group/&lt;id&gt;/project/&lt;pid&gt;/mr&apos;)</span><br></pre></td></tr></table></figure></p>
+<p><2>可以重复利用的代码写在libs中，这样不仅可以重复利用，也可以使代码看起来很简洁易懂。比如对于gitlab借口的操作我都写在了libs\api\gitlab.py中。   </2></p>
+<p><3>对gitlab的请求url前缀是相同的 那么可以定义API_PREFIX = ‘<a href="https://code.vipkid.com.cn/api/v3/&#39;，然后每个url字符串拼接,马越说这样是最好的注释，别人可以看懂这是什么。" target="_blank" rel="external">https://code.vipkid.com.cn/api/v3/&#39;，然后每个url字符串拼接,马越说这样是最好的注释，别人可以看懂这是什么。</a>   </3></p>
+<p>今天早上马越给我看了一个它们现在正在写的程序，代码封装的特别好，不会使用requests.get(url)这样的写法，因为这样不能让人知道get了些什么，有什么是可以get到的，他们使用了Field entity 这些我还不懂，也许以后会慢慢接触到吧！<br>还有就是提交代码的时候，不要提交.pyc 文件 .env文件！<br>可能还有些东西，以后想起来再加上吧。</p>
 
-class LinkList(object):
-    def __init__(self):
-        self.head = 0
-
-    def __getitem__(self, key):
-        if self.is_empty():
-            print &apos;LinkList is empty&apos;
-            return
-        elif key&lt;0 or key&gt;self.getlength():
-            print &apos;the given key is error&apos;
-            return
-
-        else:
-            return self.getitem(key)
-
-    def __set__(self, key, value):
-        if self.is_empty():
-            print &apos;linklist is empty&apos;
-            return
-        elif key&lt;0 or key&gt;self.getlength():
-            print &apos;the given key is error&apos;
-            return
-
-    def initlist(self,data):
-
-        self.head=Node(data[0])
-
-        p=self.head
-
-        for i in data[1:]:
-            node=Node(i)
-            p.next=node
-            p=p.next
-
-    def getlength(self):
-        p=self.head
-        length=0
-        while p!=0:
-            length+=1
-            p=p.next
-
-        return length
-    def is_empty(self):
-        if self.getlength() == 0:
-            return True
-        else:
-            return False
-
-    def clear(self):
-        self.head=0
-
-    def append(self,item):
-
-        q=Node(item)
-        if self.head==0:
-            self.head=q
-        else:
-            p=self.head
-            while p.next!=0:
-                p=p.next
-            p.next=q
-
-    def getitem(self,index):
-        if self.is_empty():
-            print &apos;LinkList is empty&apos;
-            return
-        j=0
-        p=self.head
-
-        while p.next!=0 and j&lt;index:
-            p=p.next
-            j+=1
-        if j==index:
-            return p.data
-        else:
-            print &apos;target is not exist&apos;
-
-    def insert(self,index,item):
-        if self.is_empty() or index&gt;self.getlength():
-            print &apos;LinkList is empty&apos;
-            return
-        if index==0:
-            q=Node(item,self.head)
-            self.head=q
-
-        p=self.head
-        post=self.head
-        j=0
-        while p.next!=0 and j&lt;index:
-            post = p
-            p=p.next
-            j+=1
-        if index == j:
-            q=Node(item,p)
-            post.next=q
-            q.next=p
-
-    def delete(self,index):
-        if self.is_empty() or index&gt;self.getlength():
-            print &apos;link is empty&apos;
-            return
-        if index==0:
-            q=Node(item,self,head)
-
-            self.head=q
-
-        p=self.head
-        post=self.head
-        j=0
-        while p.next!=0 and j&lt;index:
-            post=p
-            p=p.next
-            j+=1
-        if index==j:
-            post.next=p.next
-
-    def index(self,value):
-        if self.is_empty():
-            print &apos;LinkList is empty&apos;
-            return
-
-        p=self.head
-        i=0
-        while p.next!=0 and not p.data==value:
-            p=p.next
-            i+=1
-        if p.data==value:
-            return i
-        else:
-            return -1
-
-
-l=LinkList()
-l.initlist([1,2,3,4,5])
-print l.getitem(4)
-l.append(6)
-print l.getitem(5)
-
-
-
-l.delete(2)
-print l.getitem(4)
-</code></pre>
       
     </div>
 
@@ -461,7 +320,7 @@ print l.getitem(4)
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+            <a href="/tags/项目/" rel="tag">#项目</a>
           
         </div>
       
@@ -470,17 +329,13 @@ print l.getitem(4)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/14/深复制与浅复制的区别/" rel="next" title="深复制与浅复制的区别">
-                <i class="fa fa-chevron-left"></i> 深复制与浅复制的区别
+              <a href="/2016/07/08/三个引号/" rel="next" title="三个引号">
+                <i class="fa fa-chevron-left"></i> 三个引号
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/22/git使用总结/" rel="prev" title="git使用总结">
-                git使用总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +462,7 @@ print l.getitem(4)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#以下程序是实现链表的一些简单操作："><span class="nav-number">1.</span> <span class="nav-text">以下程序是实现链表的一些简单操作：</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
