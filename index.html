@@ -251,6 +251,104 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/11/钢琴/" itemprop="url">
+                  钢琴
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T19:50:35+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天马越把我叫去谈话了，我们两个坐的很近啊，我觉得有什么事直接说就好了，居然把我叫进一个小的会议室，那个会议室里有一架钢琴～<br>问了我能实习多久，最近感觉如何，还有什么问题之类的，我一直处于紧张状态，因为感觉这样正式要说什么似的。<br>他后来问我是不是怕他，说为什么发现经常找曹尚飞问问题而不是他。。。我回答的是因为他不在我才找的曹，但其实我确实不是很敢问他问题。我其实知道他人很好，可能因为他是男神吧，距离自然就有了。    </p>
+<p>我希望自己可以自然些。。。   </p>
+<p>实验室的项目在昨天张学长的指导下，实现了老师要求的功能，但是我昨天晚上基本没怎么睡觉，先是把实验室项目写完，然后太热就睡不着了，所以今天特别困，马越跟我说什么，我也不太能反应过来，今天其实真没干什么活，居然到后来还让写日总结，每次都是在我没干什么的情况下被要求写这种东西。   </p>
+<p>昨天晚上和学长一起回来的，突然感觉学长人很好啊，昨天周天他还要上班然后下班都快要十点了还来实验室帮我忙，澡都没洗成，说洗个凉水澡就好了，以后我有什么问题攒个两三天他就来帮我清空队列，哈哈。。。。。。<br>。。。。。。   </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/09/arctic-ocean总结/" itemprop="url">
                   arctic-ocean总结
                 </a>
@@ -1155,120 +1253,6 @@ comment_template = <span class="string">u'''\
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/05/leetcode-88/" itemprop="url">
-                  leetcode 88
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-05T23:48:43+08:00" content="2016-06-05">
-              2016-06-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="88-Merge-Sorted-Array"><a href="#88-Merge-Sorted-Array" class="headerlink" title="88. Merge Sorted Array"></a>88. Merge Sorted Array</h1><p><em>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</em><br><em>Note:<br>You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. The number of elements initialized in nums1 and nums2 are m and n respectively.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def merge(self, nums1, m, nums2, n):
-        &quot;&quot;&quot;
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: void Do not return anything, modify nums1 in-place instead.
-        &quot;&quot;&quot;
-        while m&gt;0 and n&gt;0:
-            if nums1[m-1]&gt;=nums2[n-1]:
-                nums1[m+n-1]=nums1[m-1]
-                m-=1
-            else:
-                nums1[m+n-1]=nums2[n-1]
-                n-=1
-        nums1[:n]=nums2[:n]
-</code></pre><p><strong>每一次把最后一个元素排好</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1314,7 +1298,7 @@ comment_template = <span class="string">u'''\
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
