@@ -108,7 +108,7 @@
 <meta property="og:url" content="http://tran.github.io/2016/07/12/你看你又懵了/index.html">
 <meta property="og:site_name" content="taoran12">
 <meta property="og:description" content="我今天把在字符串中的变量当作了变量（应该是用{key}括起来然后.format(key=value)），马越对我说了题目的这句话，哈哈。。今天（07.12）1、继续完善了arctic-ocean（提测工具）的代码，把url的参数放到了环境变量以及修改了一些格式。刚开始我的代码是这样写的：1url = (API_PREFIX + &apos;groups/id/projects?project_token=&amp;">
-<meta property="og:updated_time" content="2016-07-12T15:03:37.000Z">
+<meta property="og:updated_time" content="2016-07-12T15:11:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你看你又懵了">
 <meta name="twitter:description" content="我今天把在字符串中的变量当作了变量（应该是用{key}括起来然后.format(key=value)），马越对我说了题目的这句话，哈哈。。今天（07.12）1、继续完善了arctic-ocean（提测工具）的代码，把url的参数放到了环境变量以及修改了一些格式。刚开始我的代码是这样写的：1url = (API_PREFIX + &apos;groups/id/projects?project_token=&amp;">
@@ -294,7 +294,7 @@
       
         <p>我今天把在字符串中的变量当作了变量（应该是用{key}括起来然后.format(key=value)），马越对我说了题目的这句话，哈哈。。<br>今天（07.12）<br>1、继续完善了arctic-ocean（提测工具）的代码，把url的参数放到了环境变量以及修改了一些格式。<br>刚开始我的代码是这样写的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = (API_PREFIX + <span class="string">'groups/id/projects?project_token=&#123;private_key&#125;'</span>).format(private_key = PRIVATE_KEY )</span><br></pre></td></tr></table></figure></p>
 <p>经过leader提点后，把id放在format中，把private_key当作参数传入，就是说要写的灵活些。<br>修改之后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PRIVATE_KEY_PAYLOAD  = &#123;&apos;private_token&apos;: PRIVATE_KEY&#125;&#125;</span><br><span class="line">url = (API_PREFIX + &apos;groups/&#123;group_id&#125;/projects&apos;).format(group_id=id)</span><br><span class="line">response = requests.get(url, params=PRIVATE_KEY_PAYLOAD)</span><br></pre></td></tr></table></figure></p>
-<p>2、当一个字符串太长的时候，可以这样来把当分成两行：对字符串加上括号，然后在要分隔的地方加上引号（我看了马越给我发的关于代码风格的链接，加了括号好像直接在想要换行的地方换行就好，不用加引号），点回车，这样分隔起来比我以前加”\”的办法要美观很多（如果不加括号直接回车就会有‘\’）。<br>3、关于代码风格，leader推荐了<br><a href="https://google.github.io/styleguide/pyguide.html，还没有看完，回去再看看。" target="_blank" rel="external">https://google.github.io/styleguide/pyguide.html，还没有看完，回去再看看。</a></p>
+<p>2、当一个字符串太长的时候，可以这样来把当分成两行：对字符串加上括号，然后在要分隔的地方加上引号（我看了马越给我发的关于代码风格的链接，加了括号好像直接在想要换行的地方换行就好，不用加引号），点回车，这样分隔起来比我以前加”\”的办法要美观很多（如果不加括号直接回车就会有‘\’）。<br>3、关于代码风格，leader推荐了<br><a href="https://google.github.io/styleguide/pyguide.html，还没有看完，回去再看看。" target="_blank" rel="external">https://google.github.io/styleguide/pyguide.html，还没有看完，回去再看看。</a><br>对了，马越让我以后把日报写的职业一些，像是这样：<br>!［日报格式］(/img/日报格式)   </p>
 
       
     </div>
