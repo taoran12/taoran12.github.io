@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,leetcode," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -102,16 +102,15 @@
 
 
 
-<meta name="description" content="88. Merge Sorted ArrayGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.Note:You may assume that nums1 has enough space (size that is greater or equal to m +">
-<meta property="og:type" content="article">
-<meta property="og:title" content="leetcode 88">
-<meta property="og:url" content="http://tran.github.io/2016/06/05/leetcode-88/index.html">
+<meta name="description" content="然滴小窝～">
+<meta property="og:type" content="website">
+<meta property="og:title" content="taoran12">
+<meta property="og:url" content="http://tran.github.io/tags/日报/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="88. Merge Sorted ArrayGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.Note:You may assume that nums1 has enough space (size that is greater or equal to m +">
-<meta property="og:updated_time" content="2016-06-19T13:35:43.000Z">
+<meta property="og:description" content="然滴小窝～">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode 88">
-<meta name="twitter:description" content="88. Merge Sorted ArrayGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.Note:You may assume that nums1 has enough space (size that is greater or equal to m +">
+<meta name="twitter:title" content="taoran12">
+<meta name="twitter:description" content="然滴小窝～">
 
 
 
@@ -129,7 +128,7 @@
   };
 </script>
 
-  <title> leetcode 88 | taoran12 </title>
+  <title> 标签: 日报 | taoran12 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,149 +227,46 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        日报
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/07/12/你看你又懵了/" itemprop="url">
               
-                leetcode 88
+                <span itemprop="name">你看你又懵了</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-05T23:48:43+08:00" content="2016-06-05">
-              2016-06-05
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-07-12T22:54:45+08:00"
+              content="2016-07-12" >
+          07-12
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-              <span id=“busuanzi_container_page_pv”> | 阅读量<apn id=“busuanzi_value_page_pv”></span> 次</span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="88-Merge-Sorted-Array"><a href="#88-Merge-Sorted-Array" class="headerlink" title="88. Merge Sorted Array"></a>88. Merge Sorted Array</h1><p><em>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</em><br><em>Note:<br>You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. The number of elements initialized in nums1 and nums2 are m and n respectively.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def merge(self, nums1, m, nums2, n):
-        &quot;&quot;&quot;
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: void Do not return anything, modify nums1 in-place instead.
-        &quot;&quot;&quot;
-        while m&gt;0 and n&gt;0:
-            if nums1[m-1]&gt;=nums2[n-1]:
-                nums1[m+n-1]=nums1[m-1]
-                m-=1
-            else:
-                nums1[m+n-1]=nums2[n-1]
-                n-=1
-        nums1[:n]=nums2[:n]
-</code></pre><p><strong>每一次把最后一个元素排好</strong></p>
-
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/python/" rel="tag">#python</a>
-          
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/05/leetcode-169/" rel="next" title="leetcode 169">
-                <i class="fa fa-chevron-left"></i> leetcode 169
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/06/leetcode-121/" rel="prev" title="leetcode 121">
-                leetcode 121 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -378,10 +274,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -401,17 +293,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/IMG_0796.png"
@@ -474,17 +357,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#88-Merge-Sorted-Array"><span class="nav-number">1.</span> <span class="nav-text">88. Merge Sorted Array</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -588,10 +460,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
