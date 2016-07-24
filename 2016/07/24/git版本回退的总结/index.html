@@ -103,18 +103,18 @@
 
 
 <meta name="description" content="title: git版本回退的总结date: 2016-07-24 11:04:53
-tags: git回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。首先来看第一种情况，即工作区的回退。使用git checkout – file 就回到了最近一次add的状态接下来看第二种">
+tags:回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。首先来看第一种情况，即工作区的回退。使用git checkout – file 就回到了最近一次add的状态接下来看第二种情况，已">
 <meta property="og:type" content="article">
 <meta property="og:title" content="taoran12">
 <meta property="og:url" content="http://tran.github.io/2016/07/24/git版本回退的总结/index.html">
 <meta property="og:site_name" content="taoran12">
 <meta property="og:description" content="title: git版本回退的总结date: 2016-07-24 11:04:53
-tags: git回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。首先来看第一种情况，即工作区的回退。使用git checkout – file 就回到了最近一次add的状态接下来看第二种">
-<meta property="og:updated_time" content="2016-07-24T03:06:41.000Z">
+tags:回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。首先来看第一种情况，即工作区的回退。使用git checkout – file 就回到了最近一次add的状态接下来看第二种情况，已">
+<meta property="og:updated_time" content="2016-07-24T03:08:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="taoran12">
 <meta name="twitter:description" content="title: git版本回退的总结date: 2016-07-24 11:04:53
-tags: git回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。首先来看第一种情况，即工作区的回退。使用git checkout – file 就回到了最近一次add的状态接下来看第二种">
+tags:回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。首先来看第一种情况，即工作区的回退。使用git checkout – file 就回到了最近一次add的状态接下来看第二种情况，已">
 
 
 
@@ -297,7 +297,7 @@ tags: git回退的话，有三种情况，第一种只是工作区有了变化�
       
         <hr>
 <p>title: git版本回退的总结<br>date: 2016-07-24 11:04:53</p>
-<h2 id="tags-git"><a href="#tags-git" class="headerlink" title="tags: git"></a>tags: git</h2><p>回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。<br>首先来看第一种情况，即工作区的回退。<br>使用git checkout – file 就回到了最近一次add的状态<br>接下来看第二种情况，已经add了怎么办呢？<br>首先，git reset HEAD file 把暂存区的修改回退到工作区　<br>然后，git checkout – file 丢弃工作区的修改<br>最后一个啦。如果已经commit了呢？<br>git reset –hard HEAD^这是回退到上一版本   HEAD~100<br>git reset –hard commit_id<br>git log    查看现在版本库的状态<br>git reflog 查看命令历史，以便确定要回到未来的哪个版本。   </p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>回退的话，有三种情况，第一种只是工作区有了变化，想回到最近一次提交的状态；第二种情况是，已经add到了暂存区，想要回到add之前；第三种情况是已经commit了，怎样回退。<br>首先来看第一种情况，即工作区的回退。<br>使用git checkout – file 就回到了最近一次add的状态<br>接下来看第二种情况，已经add了怎么办呢？<br>首先，git reset HEAD file 把暂存区的修改回退到工作区　<br>然后，git checkout – file 丢弃工作区的修改<br>最后一个啦。如果已经commit了呢？<br>git reset –hard HEAD^这是回退到上一版本   HEAD~100<br>git reset –hard commit_id<br>git log    查看现在版本库的状态<br>git reflog 查看命令历史，以便确定要回到未来的哪个版本。   </p>
 
       
     </div>
@@ -455,7 +455,7 @@ tags: git回退的话，有三种情况，第一种只是工作区有了变化�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-git"><span class="nav-number">1.</span> <span class="nav-text">tags: git</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a></li></ol></div>
             
           </div>
         </section>
