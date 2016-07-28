@@ -251,6 +251,109 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/29/djando项目部署/" itemprop="url">
+                  djando项目部署
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-29T00:19:30+08:00" content="2016-07-29">
+              2016-07-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这周又要过去了，公司里的提测项目我自己这周并没有多大进展，增加了邮箱的合法性检查，可以异步发送邮件了的功能，总之代码量是比较少的，帮着另外两个实习生把提测项目的环境搭建起来跑通然后给他们讲了讲我写的代码。<br>这周基本上就是干了这些，我觉得我得好好想想了，这样进步真的是挺小的。<br>这周在学校是把实验室的项目搭在了我以前的windows电脑上了，感觉也就这点收获吧，差不多弄了三天，每天下班回来，因为电脑不能上无线，坐在金津那里用网线，这样坐在地上终于把项目跑起来了。<br>1、首先在windows上安装ubantu：<br>本来打算用双系统，分好区之后换了好几次镜像文件都是一进安装电脑就没有反应了，在实验室弄了好久，都无效，回宿舍梦楠又帮我弄半天还是不行，于是我放弃了双系统，选择了虚拟机。<br>用vmware简直是简单了许多。。。<br>首先安装vmware，就是想普通软件安装一样就行。然后安装iso文件。好像也没有遇见什么坑，ubantu就算是安好了吧.<br>2、在ubantu上安装各种所需软件。   </p>
+<p><1>首先安装pip<br>sudo apt-get install python-pip python-dev build-essential<br>sudo pip install –upgrade pip      </1></p>
+<p><2>使用pip安装django没有成功<br>所以我在pip 安装好之后在django官网下载django安装包,解压 python setup.py install     </2></p>
+<p><3>用pip安装mysql<br>sudo apt-get install mysql-server<br>基本命令：<br>mysql -uroot -p<br>show databases;<br>quit    </3></p>
+<p><4>要把我的mac上的项目考在ubantu上，使用ssh协议，这里的坑比较多<br>首先将网络从NAT选成桥接<br>在ubantu上安装ssh  sudo apt-get install openssh-server<br>安装好后在mac上   sudo scp -r /Users/taoran/Desktop/Navigation taoran@10.203.32.82:/home/taoran<br>这样就讲项目考在了ubantu上      </4></p>
+<p><5>此时还没有导入数据库 将mac上的数据库到处.sql文件mysqldump -u root -p new_nav &gt; new.sql<br>用scp考在ubantu上     ubantu上mysql -uroot -p  create database new_nav; use new_nav;<br>source /home/taoran/new.sql   </5></p>
+<p><6>ubantu上需要安装 sudo apt-get install pyhton-mysqldb这个好像是python操作数据库用的    </6></p>
+<p><7>接下来就可以试着运行django了<br>python manage.py makemigrations<br>python manage.py makemigrate<br>python manage.py runserver    </7></p>
+<p><8>运行会发现一些第三方包没有<br>pip install balabala…<br>嗯 现在已经很晚了，明天实验室一起去水魔方玩，我还是赶紧睡觉吧。      </8></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/24/git分支/" itemprop="url">
                   git分支
                 </a>
@@ -1145,103 +1248,6 @@ comment_template = <span class="string">u'''\
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/22/git使用总结/" itemprop="url">
-                  git使用总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-22T20:31:24+08:00" content="2016-06-22">
-              2016-06-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="git命令总结"><a href="#git命令总结" class="headerlink" title="git命令总结"></a>git命令总结</h1><p>今天是马越布置给我的第一个任务，在这之前他先跟我说了一些git的常用命令，让我自己下来学习一下，那么我现在就总结一下目前掌握的一些git命令吧<br>git fork<br>git clone<br>git checkout<br>git remote<br>git fetch</p>
-<h1 id="一、git-clone-从远程主机克隆一个版本库"><a href="#一、git-clone-从远程主机克隆一个版本库" class="headerlink" title="一、git clone 从远程主机克隆一个版本库"></a>一、git clone 从远程主机克隆一个版本库</h1><h1 id="二、git-remote-管理主机名"><a href="#二、git-remote-管理主机名" class="headerlink" title="二、git remote 管理主机名"></a>二、git remote 管理主机名</h1><p>为了便于管理，Git要求每个远程主机都必须指定一个主机名<br>git remote show &lt;主机名&gt;<br>git remote add &lt;主机名&gt; &lt;网址&gt; 添加远程主机<br>git remote rm &lt;主机名&gt; 删除远程主机</p>
-<p>＃ 三、git fetch<br>一旦远程主机的版本库有了更新(commit)，需要将这些更新取回本地，这时候就要用到git fetch 命令<br>git fetch &lt;主机名&gt; 将某个远程主机的更新，全部取回本地<br><em>git fetch 通常用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响</em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1287,7 +1293,7 @@ comment_template = <span class="string">u'''\
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1297,7 +1303,7 @@ comment_template = <span class="string">u'''\
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
