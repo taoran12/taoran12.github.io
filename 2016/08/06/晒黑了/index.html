@@ -108,7 +108,7 @@
 <meta property="og:url" content="http://tran.github.io/2016/08/06/晒黑了/index.html">
 <meta property="og:site_name" content="taoran12">
 <meta property="og:description" content="有一周没有更新博客了，上次写博客的第二天和实验室一起去了水魔方，今年首晒献给了那一天，现在身上晒出了一身泳衣，脸也黑了，感觉好亏，居然只玩了一天就被晒成了这样，不过玩的还算是开心，从一个很高的地方滑下来，我以为会很害怕，可是水的作用减弱了失重的感觉，完全不害怕，那天很累，冲浪比较有意思。再来说说这周公司发生的事情吧，这周新来了个python岗的小伙伴，是个开学大四的学弟，虽然看起来不会什么，但是感">
-<meta property="og:updated_time" content="2016-08-06T04:46:30.000Z">
+<meta property="og:updated_time" content="2016-08-06T04:49:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="晒黑了">
 <meta name="twitter:description" content="有一周没有更新博客了，上次写博客的第二天和实验室一起去了水魔方，今年首晒献给了那一天，现在身上晒出了一身泳衣，脸也黑了，感觉好亏，居然只玩了一天就被晒成了这样，不过玩的还算是开心，从一个很高的地方滑下来，我以为会很害怕，可是水的作用减弱了失重的感觉，完全不害怕，那天很累，冲浪比较有意思。再来说说这周公司发生的事情吧，这周新来了个python岗的小伙伴，是个开学大四的学弟，虽然看起来不会什么，但是感">
@@ -292,8 +292,15 @@
       
 
       
-        <p>有一周没有更新博客了，上次写博客的第二天和实验室一起去了水魔方，今年首晒献给了那一天，现在身上晒出了一身泳衣，脸也黑了，感觉好亏，居然只玩了一天就被晒成了这样，不过玩的还算是开心，从一个很高的地方滑下来，我以为会很害怕，可是水的作用减弱了失重的感觉，完全不害怕，那天很累，冲浪比较有意思。<br>再来说说这周公司发生的事情吧，这周新来了个python岗的小伙伴，是个开学大四的学弟，虽然看起来不会什么，但是感觉比较聪明的一个人，很适合做互联网这一行的男生，只是他坐在了我和马越的中间。。。导致我这周和马越的交流少了好多，马越现在好忙啊，他同时带我们四个人了，不过他有一次在叮叮上跟我说，倾向于把重要的任务交给我来做，希望我能加油，算是对我的肯定，和鼓励吧，他把oauth的任务交给了我，我懵逼了好几天，现在是可以得到了gitlab给的token，下周的任务应该是根据拿到的token访问了吧，不是在用gitlab robot了吧。<br>看看其他人提交的mr，也学到了写东西：<br>小儿的一个mr：<br>‘’’python<br>result = dict()<br>for m in (g_members + p_members):<br>    id = m.get(‘id’)<br>    if not result.get(id):<br>        result[id] = m</p>
-<p>return Response(json.dumps(result.values()), mimetype=’application/json’)<br>‘’’   </p>
+        <p>有一周没有更新博客了，上次写博客的第二天和实验室一起去了水魔方，今年首晒献给了那一天，现在身上晒出了一身泳衣，脸也黑了，感觉好亏，居然只玩了一天就被晒成了这样，不过玩的还算是开心，从一个很高的地方滑下来，我以为会很害怕，可是水的作用减弱了失重的感觉，完全不害怕，那天很累，冲浪比较有意思。<br>再来说说这周公司发生的事情吧，这周新来了个python岗的小伙伴，是个开学大四的学弟，虽然看起来不会什么，但是感觉比较聪明的一个人，很适合做互联网这一行的男生，只是他坐在了我和马越的中间。。。导致我这周和马越的交流少了好多，马越现在好忙啊，他同时带我们四个人了，不过他有一次在叮叮上跟我说，倾向于把重要的任务交给我来做，希望我能加油，算是对我的肯定，和鼓励吧，他把oauth的任务交给了我，我懵逼了好几天，现在是可以得到了gitlab给的token，下周的任务应该是根据拿到的token访问了吧，不是在用gitlab robot了吧。<br>看看其他人提交的mr，也学到了写东西：<br>小儿的一个mr：   </p>
+<pre><code class="python">result = dict()
+<span class="keyword">for</span> m <span class="keyword">in</span> (g_members + p_members):
+    id = m.get(<span class="string">'id'</span>)
+    <span class="keyword">if</span> <span class="keyword">not</span> result.get(id):
+        result[id] = m
+
+<span class="keyword">return</span> Response(json.dumps(result.values()), mimetype=<span class="string">'application/json'</span>)
+</code></pre>
 
       
     </div>
