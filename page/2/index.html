@@ -251,6 +251,102 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/25/level-test总结/" itemprop="url">
+                  level-test总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-25T10:22:04+08:00" content="2016-06-25">
+              2016-06-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。</p>
+<p>大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到gitlab上，通过之后再写下一个，首先是在database中建立一个dev.sql,我模仿着IT-Test的样子，建立了level_test_result表,<br>在提交之前，先把虚拟环境搭好 测试和格式看是否可以通过在提交<br>        virtualenv venv<br>        source venv/bin/activate<br>        make pip<br>        cp .env.example .env 把.env 中的参数配置好<br>        make test<br>        make lint<br>        使用honcho start可以将程序跑起来<br>然后提交，提交时用的命令：<br>    git status看看有哪些修改过却没有add的<br>    git add <file><br>    git commit 这条命令会进入vim模式 写一些问题和解决之类的描述<br>    git push origin master -f(之后建立了dev分支)<br>打开gitlab 添加一个request，然后把它再填入mr，提交，@mayue，这样他会检查是否可以通过<br>如果马越那里有了新的改进，那么首先是要先git remote add upstream <internal的ssh><br>    git fetch upstream<br>    git rebase upstream/master<br>    第一次提交肯定是有各种问题啦。。。在耐心的马越的指导下，我进行了修改，这次建表遇到的坑有：表名起名为level_test_result，mobile是varchar型，起始结束时间是timestamp NOT NULL<br>    好啦，第一次提交通过了，因为commit了好几次，马越说让我把他合为一次<br>    git log<br>    把最先commit的那个之前的一个复制下来，<br>    git rebase -i &lt;之前复制的那个&gt;<br>    进入vim模式，把之后commit的前面的改为s<br>    git push origin dev -f<br>    接下来实现第二步<br>    首先写model层<br>    这里主要是一些命名规则需要注意<br>    然后写test_level_test_result.py 做测试用的<br>    assert是断言的意思<br>    今天是周六，应该会写view层。。。<br>    我觉得我能遇到马越，真的是我的幸运～</internal的ssh></file></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/22/git使用总结/" itemprop="url">
                   git使用总结
                 </a>
@@ -1163,114 +1259,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/05/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-05T02:05:33+08:00" content="2016-06-05">
-              2016-06-05
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1311,7 +1304,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

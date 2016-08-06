@@ -251,6 +251,102 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/06/晒黑了/" itemprop="url">
+                  晒黑了
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-06T12:26:04+08:00" content="2016-08-06">
+              2016-08-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有一周没有更新博客了，上次写博客的第二天和实验室一起去了水魔方，今年首晒献给了那一天，现在身上晒出了一身泳衣，脸也黑了，感觉好亏，居然只玩了一天就被晒成了这样，不过玩的还算是开心，从一个很高的地方滑下来，我以为会很害怕，可是水的作用减弱了失重的感觉，完全不害怕，那天很累，冲浪比较有意思。<br>再来说说这周公司发生的事情吧，这周新来了个python岗的小伙伴，是个开学大四的学弟，虽然看起来不会什么，但是感觉比较聪明的一个人，很适合做互联网这一行的男生，只是他坐在了我和马越的中间。。。导致我这周和马越的交流少了好多，马越现在好忙啊，他同时带我们四个人了，不过他有一次在叮叮上跟我说，倾向于把重要的任务交给我来做，希望我能加油，算是对我的肯定，和鼓励吧，他把oauth的任务交给了我，我懵逼了好几天，现在是可以得到了gitlab给的token，下周的任务应该是根据拿到的token访问了吧，不是在用gitlab robot了吧。<br>看看其他人提交的mr，也学到了写东西：<br>小儿的一个mr：<br>‘’’python<br>result = dict()<br>for m in (g_members + p_members):<br>    id = m.get(‘id’)<br>    if not result.get(id):<br>        result[id] = m</p>
+<p>return Response(json.dumps(result.values()), mimetype=’application/json’)<br>‘’’   </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/29/djando项目部署/" itemprop="url">
                   djando项目部署
                 </a>
@@ -1152,107 +1248,11 @@ comment_template = <span class="string">u'''\
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/25/level-test总结/" itemprop="url">
-                  level-test总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-25T10:22:04+08:00" content="2016-06-25">
-              2016-06-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。</p>
-<p>大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到gitlab上，通过之后再写下一个，首先是在database中建立一个dev.sql,我模仿着IT-Test的样子，建立了level_test_result表,<br>在提交之前，先把虚拟环境搭好 测试和格式看是否可以通过在提交<br>        virtualenv venv<br>        source venv/bin/activate<br>        make pip<br>        cp .env.example .env 把.env 中的参数配置好<br>        make test<br>        make lint<br>        使用honcho start可以将程序跑起来<br>然后提交，提交时用的命令：<br>    git status看看有哪些修改过却没有add的<br>    git add <file><br>    git commit 这条命令会进入vim模式 写一些问题和解决之类的描述<br>    git push origin master -f(之后建立了dev分支)<br>打开gitlab 添加一个request，然后把它再填入mr，提交，@mayue，这样他会检查是否可以通过<br>如果马越那里有了新的改进，那么首先是要先git remote add upstream <internal的ssh><br>    git fetch upstream<br>    git rebase upstream/master<br>    第一次提交肯定是有各种问题啦。。。在耐心的马越的指导下，我进行了修改，这次建表遇到的坑有：表名起名为level_test_result，mobile是varchar型，起始结束时间是timestamp NOT NULL<br>    好啦，第一次提交通过了，因为commit了好几次，马越说让我把他合为一次<br>    git log<br>    把最先commit的那个之前的一个复制下来，<br>    git rebase -i &lt;之前复制的那个&gt;<br>    进入vim模式，把之后commit的前面的改为s<br>    git push origin dev -f<br>    接下来实现第二步<br>    首先写model层<br>    这里主要是一些命名规则需要注意<br>    然后写test_level_test_result.py 做测试用的<br>    assert是断言的意思<br>    今天是周六，应该会写view层。。。<br>    我觉得我能遇到马越，真的是我的幸运～</internal的ssh></file></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1293,7 +1293,7 @@ comment_template = <span class="string">u'''\
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
