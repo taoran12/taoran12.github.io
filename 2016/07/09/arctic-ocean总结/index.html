@@ -102,16 +102,19 @@
 
 
 
-<meta name="description" content="今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好lea">
+<meta name="description" content="这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。这个项目设计一下知识点：1、http/api     
+首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token比如这样的url：code.vipkid.com.cn/lib/api/groups?privat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="arctic-ocean总结">
 <meta property="og:url" content="http://tran.github.io/2016/07/09/arctic-ocean总结/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好lea">
-<meta property="og:updated_time" content="2016-07-09T15:04:27.000Z">
+<meta property="og:description" content="这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。这个项目设计一下知识点：1、http/api     
+首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token比如这样的url：code.vipkid.com.cn/lib/api/groups?privat">
+<meta property="og:updated_time" content="2016-09-04T06:50:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="arctic-ocean总结">
-<meta name="twitter:description" content="今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好lea">
+<meta name="twitter:description" content="这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。这个项目设计一下知识点：1、http/api     
+首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token比如这样的url：code.vipkid.com.cn/lib/api/groups?privat">
 
 
 
@@ -292,7 +295,7 @@
       
 
       
-        <p>今天是第三周的周六，北冰洋项目差不多的功能是可以实现了，可以提交评论并且转换成html格式发送邮件了，今天中午实现了发送邮件，之后马越让我看看关于gitlab的鉴权，因为现在的url都带着private_token，这样对于使用它的人来说是不方便的，马越后来说不行就建立个账号，让它拥有访问所有项目的权限，不像我现在只能看到自己的项目。四点来钟的时候马越说今天周六让我早点回去，马越真的是世界好leader。。。我遇见这样的leader，是我的幸运～<br>这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。<br>这个项目设计一下知识点：<br>1、http/api     </p>
+        <p>这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。<br>这个项目设计一下知识点：<br>1、http/api     </p>
 <p><1>首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token<br>比如这样的url：code.vipkid.com.cn/lib/api/groups?private_token=R7sdfhef-d5jZQ6sfjwR</1></p>
 <p><2>请求用的是requests，马越说这个是业界口碑很好的，什么urllib之类的不如这个好<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(url)</span><br><span class="line">response.json()      </span><br><span class="line">r = requests.post(url, data=&#123;<span class="string">'body'</span>: body&#125;)</span><br></pre></td></tr></table></figure></2></p>
 <p>2、markdown<br>markdown其实就是一个字符串，可以在编辑器里传入一个字符串，然后会解析成markdown的格式，刚开始我用的就是字符串拼接的方式，在上篇博客中有所介绍，后来用了三个引号，虽然本质相同，但是方便很多，专门建一个模版，然后导入，使用string({key}).format(key=value)<br>3、python web<br>当然这是web开发项目，涉及到表单之类的知识。<br>4、e-mail<br>邮件部分是学长写的，我直接导入调用就行了    </p>
@@ -344,8 +347,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/11/钢琴/" rel="prev" title="钢琴">
-                钢琴 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/12/你看你又懵了/" rel="prev" title="你看你又懵了">
+                你看你又懵了 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,7 +417,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -424,7 +427,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

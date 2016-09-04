@@ -251,294 +251,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/04/第三周的第一天/" itemprop="url">
-                  第三周的第一天
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-04T21:12:49+08:00" content="2016-07-04">
-              2016-07-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天已经是第三周了，上周没有什么总结，但是其实还是做了很多事情的，周六的时候把level_test做的差不多了，马越再改些细节应该就可以上线了，这是在公司的第一个项目，马越很耐心的带着做完了，但是以后可能是不会再有这么好的待遇了，周六给我们布置了新的任务，做一个提测的工具，我和旁边的那个学长一起完成，说是学长，我今天在这里真的是好想吐槽吐槽他。。。我本来就是个菜鸡，没想到研二的还有比我还菜鸡的，他完全不懂web开发，连最基本的表单是什么他都不知道，虽然菜鸡与菜鸡本不应该相恨相杀，但是我就是想吐槽，本来想有个大神带我，结果来了个比我还水的，之前庆幸leader招人没有提问什么，现在好希望leader以后招人还是好好把把关吧。。。<br>今天情绪本来就低落，因为来大姨妈，特别瞌睡，心情不好，旁边的学长还不给力，leader今天也放养我们了，所以今天是我来公司做的事情最少的一天，对旁边的学长态度很不好，他肯定也看出来了，不过我自己也有错，人和人是不同的，他来做web开发，肯定是有它的原因，我给他提那些意见其实挺多余的，我何必管那么宽，明天开始我自己完成我自己的任务就好了，不跟他呕那个气了，郭靖说给两个星期把项目做完，我每天做好自己的事情就好了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/25/level-test总结/" itemprop="url">
-                  level-test总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-25T10:22:04+08:00" content="2016-06-25">
-              2016-06-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。</p>
-<p>大概思路有了，就开始一步一步的写代码了，马越真的是太好了，让我一步一步写，写完一个提到gitlab上，通过之后再写下一个，首先是在database中建立一个dev.sql,我模仿着IT-Test的样子，建立了level_test_result表,<br>在提交之前，先把虚拟环境搭好 测试和格式看是否可以通过在提交<br>        virtualenv venv<br>        source venv/bin/activate<br>        make pip<br>        cp .env.example .env 把.env 中的参数配置好<br>        make test<br>        make lint<br>        使用honcho start可以将程序跑起来<br>然后提交，提交时用的命令：<br>    git status看看有哪些修改过却没有add的<br>    git add <file><br>    git commit 这条命令会进入vim模式 写一些问题和解决之类的描述<br>    git push origin master -f(之后建立了dev分支)<br>打开gitlab 添加一个request，然后把它再填入mr，提交，@mayue，这样他会检查是否可以通过<br>如果马越那里有了新的改进，那么首先是要先git remote add upstream <internal的ssh><br>    git fetch upstream<br>    git rebase upstream/master<br>    第一次提交肯定是有各种问题啦。。。在耐心的马越的指导下，我进行了修改，这次建表遇到的坑有：表名起名为level_test_result，mobile是varchar型，起始结束时间是timestamp NOT NULL<br>    好啦，第一次提交通过了，因为commit了好几次，马越说让我把他合为一次<br>    git log<br>    把最先commit的那个之前的一个复制下来，<br>    git rebase -i &lt;之前复制的那个&gt;<br>    进入vim模式，把之后commit的前面的改为s<br>    git push origin dev -f<br>    接下来实现第二步<br>    首先写model层<br>    这里主要是一些命名规则需要注意<br>    然后写test_level_test_result.py 做测试用的<br>    assert是断言的意思<br>    今天是周六，应该会写view层。。。<br>    我觉得我能遇到马越，真的是我的幸运～</internal的ssh></file></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/22/git使用总结/" itemprop="url">
-                  git使用总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-22T20:31:24+08:00" content="2016-06-22">
-              2016-06-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="git命令总结"><a href="#git命令总结" class="headerlink" title="git命令总结"></a>git命令总结</h1><p>今天是马越布置给我的第一个任务，在这之前他先跟我说了一些git的常用命令，让我自己下来学习一下，那么我现在就总结一下目前掌握的一些git命令吧<br>git fork<br>git clone<br>git checkout<br>git remote<br>git fetch</p>
-<h1 id="一、git-clone-从远程主机克隆一个版本库"><a href="#一、git-clone-从远程主机克隆一个版本库" class="headerlink" title="一、git clone 从远程主机克隆一个版本库"></a>一、git clone 从远程主机克隆一个版本库</h1><h1 id="二、git-remote-管理主机名"><a href="#二、git-remote-管理主机名" class="headerlink" title="二、git remote 管理主机名"></a>二、git remote 管理主机名</h1><p>为了便于管理，Git要求每个远程主机都必须指定一个主机名<br>git remote show &lt;主机名&gt;<br>git remote add &lt;主机名&gt; &lt;网址&gt; 添加远程主机<br>git remote rm &lt;主机名&gt; 删除远程主机</p>
-<p>＃ 三、git fetch<br>一旦远程主机的版本库有了更新(commit)，需要将这些更新取回本地，这时候就要用到git fetch 命令<br>git fetch &lt;主机名&gt; 将某个远程主机的更新，全部取回本地<br><em>git fetch 通常用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响</em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/06/19/用python实现链表/" itemprop="url">
                   用python实现链表
                 </a>
@@ -1245,11 +957,223 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/05/leetcode1/" itemprop="url">
+                  leetcode1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-05T19:33:13+08:00" content="2016-06-05">
+              2016-06-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h1><p><em>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</em></p>
+<p><em>You may assume that each input would have exactly one solution.</em></p>
+<hr>
+<pre><code>class Solution(object):
+    def twoSum(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j]==target:
+                    return [i,j]
+        return 0
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/05/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-05T02:05:33+08:00" content="2016-06-05">
+              2016-06-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 
@@ -1290,7 +1214,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1300,7 +1224,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

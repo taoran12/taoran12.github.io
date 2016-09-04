@@ -102,16 +102,19 @@
 
 
 
-<meta name="description" content="今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交">
+<meta name="description" content="今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。首先我先了解了一下Markdown的语法，看怎么可以写成表格  
+12345| proje">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三个引号">
 <meta property="og:url" content="http://tran.github.io/2016/07/08/三个引号/index.html">
 <meta property="og:site_name" content="taoran12">
-<meta property="og:description" content="今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交">
-<meta property="og:updated_time" content="2016-07-09T15:18:14.000Z">
+<meta property="og:description" content="今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。首先我先了解了一下Markdown的语法，看怎么可以写成表格  
+12345| proje">
+<meta property="og:updated_time" content="2016-09-04T06:48:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三个引号">
-<meta name="twitter:description" content="今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交">
+<meta name="twitter:description" content="今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。首先我先了解了一下Markdown的语法，看怎么可以写成表格  
+12345| proje">
 
 
 
@@ -292,7 +295,7 @@
       
 
       
-        <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，马越把他起名为arctic-ocean（哈哈，我的leader就是这么个性啊，好喜欢～～），北冰洋，其实他是一个提测时候用的工具啦，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，是不是很方便了～～  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格  </p>
+        <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| project_name | project_function | system_involved |   </span><br><span class="line">| -------- | -------- | --------|   </span><br><span class="line">| cell <span class="number">1</span> | cell <span class="number">2</span> | cell3 |   </span><br><span class="line">| project_name | project_function | system_involved |    </span><br><span class="line">| -------- | -------- | --------|</span><br></pre></td></tr></table></figure>
 <p>于是我很费劲的写成了这样：    </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body1 = '|'+ 'project_name' +'|'+ 'project_function'+ '|'+'system_involved'+'|'+'database_   </span><br><span class="line">changes'+'|'+'permissions_modify'+'|'+'people_concerned'+'|'+'testing_concerns'+'|'+'scheduled_launch_   </span><br><span class="line">time'+'|'+'remind_somebody'+'|' +'\n'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'   </span><br><span class="line">+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'\n'+'|'+ project_   </span><br><span class="line">name+'|'+project_function+'|'+system_involved+'|'+database_changes+'|'+permissions_modify+'|'+people_   </span><br><span class="line">concerned+'|'+testing_concerns+'|'+scheduled_launch_time+'|'+remind_somebody+'|</span><br></pre></td></tr></table></figure>
@@ -353,8 +356,8 @@ comment_template = <span class="string">u'''\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/04/第三周的第一天/" rel="next" title="第三周的第一天">
-                <i class="fa fa-chevron-left"></i> 第三周的第一天
+              <a href="/2016/06/25/level-test总结/" rel="next" title="level-test总结">
+                <i class="fa fa-chevron-left"></i> level-test总结
               </a>
             
           </div>
@@ -431,7 +434,7 @@ comment_template = <span class="string">u'''\
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -441,7 +444,7 @@ comment_template = <span class="string">u'''\
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
