@@ -126,6 +126,7 @@ body {
   background: #eee;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
+  background-image: url("/images/banner.png");
 }
 .outer {
   max-width: 1220px;
