@@ -95,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciulbg1zl0000toj3eibvvbtz" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciulbpfhu0000uyj3ya4a4md1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -119,37 +119,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
-<thead>
-<tr>
-<th>project_name</th>
-<th>project_function</th>
-<th>system_involved</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cell 1</td>
-<td>cell 2</td>
-<td>cell3</td>
-</tr>
-<tr>
-<td>project_name</td>
-<td>project_function</td>
-<td>system_involved</td>
-</tr>
-<tr>
-<td>——–</td>
-<td>——–</td>
-<td>——–</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="python-实现链表的反转"><a href="#python-实现链表的反转" class="headerlink" title="python 实现链表的反转"></a>python 实现链表的反转</h2><p>从头开始遍历，每一个节点的next指向它的前一个节点。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,x)</span>:</span></span><br><span class="line">        self.val=x</span><br><span class="line">        self.next=<span class="keyword">None</span></span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nonrecurse</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> head.next <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    pre = <span class="keyword">None</span></span><br><span class="line">    cur = head</span><br><span class="line">    h = head</span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        h=cur</span><br><span class="line">        tmp = cur.next</span><br><span class="line">        cur.next = pre</span><br><span class="line">        pre = cur</span><br><span class="line">        cur = tmp</span><br><span class="line">    <span class="keyword">return</span> h</span><br><span class="line">        </span><br><span class="line">head = ListNode(<span class="number">1</span>)</span><br><span class="line">p1=ListNode(<span class="number">2</span>)</span><br><span class="line">p2=ListNode(<span class="number">3</span>)</span><br><span class="line">p3=ListNode(<span class="number">4</span>)</span><br><span class="line">head.next = p1</span><br><span class="line">p1.next = p2</span><br><span class="line">p2.next = p3</span><br><span class="line">p=nonrecurse(head)</span><br><span class="line"><span class="keyword">while</span> p:</span><br><span class="line">    <span class="keyword">print</span> p.val</span><br><span class="line">    p=p.next</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">head = ListNode(<span class="number">1</span>)</span><br><span class="line">p1=ListNode(<span class="number">2</span>)</span><br><span class="line">p2=ListNode(<span class="number">3</span>)</span><br><span class="line">p3=ListNode(<span class="number">4</span>)</span><br><span class="line">head.next = p1</span><br><span class="line">p1.next = p2</span><br><span class="line">p2.next = p3</span><br><span class="line">p=nonrecurse(head)</span><br><span class="line"><span class="keyword">while</span> p:</span><br><span class="line">    <span class="keyword">print</span> p.val</span><br><span class="line">    p=p.next</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciulbg21b0011toj3qe7kcl6i" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciulbpfjy001ruyj3xbu683mn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciulbg214000utoj3td5e1d5k" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciulbpfj8000uuyj3b9x58npm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciulbg1zv0003toj378f98s6b" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciulbpfi40003uyj3lxclgzij" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/">django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/部署/">部署</a></li></ul>
@@ -278,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciulbg1zy0006toj3vr4lbjso" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciulbpfi70006uyj3nwayeqis" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -309,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciulbg2010008toj3e1twzu0l" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciulbpfia0008uyj3dspe8coo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +330,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciulbg20w000ptoj3bx713rxk" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciulbpfj0000puyj38cuhe2jb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
@@ -396,7 +371,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciulbg20s000ntoj37tr4nro3" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciulbpfiz000nuyj3wnisscx9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
@@ -448,7 +423,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/09/arctic-ocean总结/" data-id="ciulbg1zq0001toj3iw0gdknt" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/09/arctic-ocean总结/" data-id="ciulbpfhz0001uyj3jcl7ztu8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
@@ -517,7 +492,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/08/三个引号/" data-id="ciulbg20q000ltoj3r7x7n1v3" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/08/三个引号/" data-id="ciulbpfiw000luyj3onv8vtxk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
