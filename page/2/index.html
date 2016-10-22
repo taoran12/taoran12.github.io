@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://taoran12.github.io"></form>
@@ -67,6 +67,46 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-level-test总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/25/level-test总结/" class="article-date">
+  <time datetime="2016-06-25T02:22:04.000Z" itemprop="datePublished">2016-06-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/25/level-test总结/">level-test总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来公司实习的第五天，马越给我布置了一个新项目，功能：家长输入手机号，点击进入开始答题，点击提交，服务器把成绩，手机号，成绩，开始时间，结束时间，记录在mysql数据库中，难点主要是怎么样确保是在某一个确定的手机号上答题，马越让我先了解了一下cookie,把手机号，成绩，起始结束时间都放在cookie当中。</p>
+<p>首先是在database中建立一个dev.sql,我模仿着IT-Test的样子，建立了level_test_result表,<br>在提交之前，先把虚拟环境搭好 测试和格式看是否可以通过在提交<br>        virtualenv venv<br>        source venv/bin/activate<br>        make pip<br>        cp .env.example .env 把.env 中的参数配置好<br>        make test<br>        make lint<br>        使用honcho start可以将程序跑起来<br>然后提交，提交时用的命令：<br>    git status看看有哪些修改过却没有add的<br>    git add <file><br>    git commit 这条命令会进入vim模式 写一些问题和解决之类的描述<br>    git push origin master -f(之后建立了dev分支)<br>打开gitlab 添加一个request，然后把它再填入mr，提交，@mayue，这样他会检查是否可以通过<br>如果马越那里有了新的改进，那么首先是要先git remote add upstream <internal的ssh><br>    git fetch upstream<br>    git rebase upstream/master<br>    第一次提交肯定是有各种问题啦。。。在耐心的马越的指导下，我进行了修改，这次建表遇到的坑有：表名起名为level_test_result，mobile是varchar型，起始结束时间是timestamp NOT NULL<br>    好啦，第一次提交通过了，因为commit了好几次，马越说让我把他合为一次<br>    git log<br>    把最先commit的那个之前的一个复制下来，<br>    git rebase -i &lt;之前复制的那个&gt;<br>    进入vim模式，把之后commit的前面的改为s<br>    git push origin dev -f<br>    接下来实现第二步<br>    首先写model层<br>    这里主要是一些命名规则需要注意<br>    然后写test_level_test_result.py 做测试用的<br>    assert是断言的意思<br>    今天是周六，应该会写view层。。。</internal的ssh></file></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://taoran12.github.io/2016/06/25/level-test总结/" data-id="ciulbeauc000msgj34zurz4yq" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-git使用总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -97,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/22/git使用总结/" data-id="ciuj5rkpk0001qcj32uy71aey" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/22/git使用总结/" data-id="ciulbeatl0004sgj3rdkkb7x2" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -140,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/19/用python实现链表/" data-id="ciuj5rkqt000xqcj3864byw5j" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/19/用python实现链表/" data-id="ciulbeavk001psgj3uzp3r3bg" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
@@ -183,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/14/深复制与浅复制的区别/" data-id="ciuj5rkqr000vqcj3ogd6soeu" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/14/深复制与浅复制的区别/" data-id="ciulbeaup000usgj32wtk9deo" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -224,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/14/排序总结/" data-id="ciuj5rkql000rqcj30fo956hv" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/14/排序总结/" data-id="ciulbeauh000psgj3191annqo" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -279,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/06/leetcode-121/" data-id="ciuj5rkq1000cqcj3105g18im" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/06/leetcode-121/" data-id="ciulbeau2000dsgj34yqumm6t" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -337,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-88/" data-id="ciuj5rkq7000fqcj30s5nphk0" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-88/" data-id="ciulbeatw000csgj3pc6uh0xa" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -387,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-169/" data-id="ciuj5rkpy0009qcj3krcd4zwk" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-169/" data-id="ciulbeau4000fsgj3rfsc6ump" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -434,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-217/" data-id="ciuj5rkq6000dqcj3ako5psu3" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-217/" data-id="ciulbeau6000hsgj3gmmf9gvw" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -487,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode1/" data-id="ciuj5rkq9000gqcj3u48tz7br" class="article-share-link">Partager</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode1/" data-id="ciulbeaue000nsgj33ti65e7e" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -499,55 +539,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/05/hello-world/" class="article-date">
-  <time datetime="2016-06-04T18:05:33.000Z" itemprop="datePublished">2016-06-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/hello-world/" data-id="ciuj5rkpw0008qcj3hvq8u9o9" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -558,9 +553,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日报/">日报</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日报/">日报</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
     </div>
   </div>
 
@@ -568,16 +563,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/ubantu/" style="font-size: 10px;">ubantu</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日报/" style="font-size: 13.33px;">日报</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/部署/" style="font-size: 10px;">部署</a> <a href="/tags/项目/" style="font-size: 13.33px;">项目</a>
+      <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/ubantu/" style="font-size: 10px;">ubantu</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日报/" style="font-size: 13.33px;">日报</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/部署/" style="font-size: 10px;">部署</a> <a href="/tags/项目/" style="font-size: 13.33px;">项目</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
     </div>
@@ -587,12 +582,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/10/21/链表反转/">链表反转</a>
+            <a href="/2016/10/22/98年/">98年</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/21/链表反转/">(no title)</a>
           </li>
         
           <li>
@@ -605,10 +604,6 @@
         
           <li>
             <a href="/2016/07/24/git分支/">git分支</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/24/git版本回退的总结/">(no title)</a>
           </li>
         
       </ul>
@@ -624,7 +619,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 taoran<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
