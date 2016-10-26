@@ -67,7 +67,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://taoran12.github.io"></form>
@@ -77,6 +77,75 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-三个引号" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/08/三个引号/" class="article-date">
+  <time datetime="2016-07-08T12:44:35.000Z" itemprop="datePublished">2016-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/08/三个引号/">三个引号</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| project_name | project_function | system_involved |   </span><br><span class="line">| -------- | -------- | --------|   </span><br><span class="line">| cell <span class="number">1</span> | cell <span class="number">2</span> | cell3 |   </span><br><span class="line">| project_name | project_function | system_involved |    </span><br><span class="line">| -------- | -------- | --------|</span><br></pre></td></tr></table></figure>
+<p>于是我很费劲的写成了这样：    </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body1 = '|'+ 'project_name' +'|'+ 'project_function'+ '|'+'system_involved'+'|'+'database_   </span><br><span class="line">changes'+'|'+'permissions_modify'+'|'+'people_concerned'+'|'+'testing_concerns'+'|'+'scheduled_launch_   </span><br><span class="line">time'+'|'+'remind_somebody'+'|' +'\n'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'   </span><br><span class="line">+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'\n'+'|'+ project_   </span><br><span class="line">name+'|'+project_function+'|'+system_involved+'|'+database_changes+'|'+permissions_modify+'|'+people_   </span><br><span class="line">concerned+'|'+testing_concerns+'|'+scheduled_launch_time+'|'+remind_somebody+'|</span><br></pre></td></tr></table></figure>
+<p>就是这样用字符串拼接的方式，虽然能够实现功能，但是真的不好些，而且也不好看，马越看后，先是让我写成一个模版，即建立一个新的文件，然后<br>import，这是一方面，更重要的是体会到了三个引号的强大，完全可以想如下这样写啊。三个引号是可以保留空行的，当马越跟我说可以这样的时候，<br>瞬间一阵风吹来似的，自己好蠢的写了好久，结果其实是可以直接复制过来的。     </p>
+<pre><code class="python"><span class="comment"># coding: utf-8</span>
+comment_template = <span class="string">u'''\
+| header 1 | header 2 |
+| -------- | -------- |
+| 测试项目名称 | {project_name}|
+| 测试功能 | {project_function}|
+| 提测涉及系统 | {system_involved} |
+| 是否有数据库修改 | {need_to_change_db_schema}|
+| 是否有权限修改 | {need_to_change_permissions} |
+| 涉及人员 | {developers} |
+| 测试关注点 | {checking_point} |
+| 计划上线时间| {scheduled_launch_time} |
+| 提醒某人 | {remind_somebody} |'''</span>
+</code></pre>
+<p>view中这样：用string.format（)     </p>
+<pre><code class="python">body = template.comment_template.format(
+            project_name=project_name,
+            project_function=project_function,
+            system_involved=system_involved,
+            need_to_change_db_schema=need_to_change_db_schema,
+            need_to_change_permissions=need_to_change_permissions,
+            developers=developers,
+            checking_point=checking_point,
+            scheduled_launch_time=scheduled_launch_time,
+            remind_somebody=remind_somebody)
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://taoran12.github.io/2016/07/08/三个引号/" data-id="ciur40ind000o24j3yacvg0t7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-level-test总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -106,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/25/level-test总结/" data-id="ciuns7g56001eipj3s3n00x19" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/25/level-test总结/" data-id="ciur40inh000q24j3v3coge5c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
@@ -147,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/22/git使用总结/" data-id="ciuns7g2y0003ipj3zhk7jxfk" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/22/git使用总结/" data-id="ciur40img000224j3pfy1srbp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -190,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/19/用python实现链表/" data-id="ciuns7g55001cipj3731u6wk7" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/19/用python实现链表/" data-id="ciur40inw001224j3gw3yvf4v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
@@ -233,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/14/深复制与浅复制的区别/" data-id="ciuns7g4x0016ipj3i3mnd8k8" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/14/深复制与浅复制的区别/" data-id="ciur40ins000y24j3mvxbhp6s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/14/排序总结/" data-id="ciuns7g4v0014ipj37oj222b0" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/14/排序总结/" data-id="ciur40inl000t24j391me3bzs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/06/leetcode-121/" data-id="ciuns7g300006ipj3ru95dlau" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/06/leetcode-121/" data-id="ciur40ims000924j3x83dz4cj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -387,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-88/" data-id="ciuns7g48000vipj3m4isbs99" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-88/" data-id="ciur40in9000l24j32bhbhwu6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -437,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-169/" data-id="ciuns7g59001gipj3hmfj2ezr" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-169/" data-id="ciur40in0000d24j3yigyfzbh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -484,60 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-217/" data-id="ciuns7g3x000qipj36penerlh" class="article-share-link">Delen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-leetcode1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/05/leetcode1/" class="article-date">
-  <time datetime="2016-06-05T11:33:13.000Z" itemprop="datePublished">2016-06-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/05/leetcode1/">leetcode1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h1><p><em>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</em></p>
-<p><em>You may assume that each input would have exactly one solution.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def twoSum(self, nums, target):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        &quot;&quot;&quot;
-        for i in range(len(nums)):
-            for j in range(i+1,len(nums)):
-                if nums[i]+nums[j]==target:
-                    return [i,j]
-        return 0
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode1/" data-id="ciuns7g43000sipj3cdbndxki" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-217/" data-id="ciur40in7000i24j3gqkpwekw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -563,9 +579,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日报/">日报</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日报/">日报</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
     </div>
   </div>
 
@@ -575,14 +591,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/ubantu/" style="font-size: 10px;">ubantu</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日报/" style="font-size: 13.33px;">日报</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/部署/" style="font-size: 10px;">部署</a> <a href="/tags/项目/" style="font-size: 13.33px;">项目</a>
+      <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/ubantu/" style="font-size: 10px;">ubantu</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日报/" style="font-size: 13.33px;">日报</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/部署/" style="font-size: 10px;">部署</a> <a href="/tags/项目/" style="font-size: 13.33px;">项目</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
     </div>
@@ -592,9 +608,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/26/终端环境配置/">终端环境配置</a>
+          </li>
         
           <li>
             <a href="/2016/10/22/98年/">98年</a>
@@ -610,10 +630,6 @@
         
           <li>
             <a href="/2016/07/29/djando项目部署/">djando项目部署</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/24/git分支/">git分支</a>
           </li>
         
       </ul>

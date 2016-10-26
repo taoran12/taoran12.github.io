@@ -67,7 +67,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://taoran12.github.io"></form>
@@ -77,6 +77,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-终端环境配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/26/终端环境配置/" class="article-date">
+  <time datetime="2016-10-26T14:51:37.000Z" itemprop="datePublished">2016-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/26/终端环境配置/">终端环境配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>早就说要转移到vim上，无奈在vim修炼的第一级：“存活”上狗带了n次，昨天被<a href="http://wangzhihao.com.cn/" target="_blank" rel="external">志豪小盆友</a>说工作效率低下很大原因是因为没有使用强大的工具，终于被拍醒，于是下定决心，怎么也要把这个这么有逼格的东西用起！在<a href="http://wangzhihao.com.cn/" target="_blank" rel="external">志豪（再一次上链接哈哈～）</a>的帮助下，我现在终于在“存活”上迈进了一步～！<br>首先说明一些概念：<br><strong>终端</strong>，即所谓的命令行界面，又称命令终端，用户输入shell命令用的窗口，跟Windows里的DOS界面差不多。我使用了iTerm2，它要比os x的terminal的功能强大<br><strong>shell</strong>，Shell就是用户和操作系统之间的壳，中介，shell有很多种：bash，csh,zsh；shell将用户输入翻译为操作系统能处理的指令。shell提供了一些内置命令。<br><strong>iterm2</strong>  目前发现了比终端多的一些功能   </p>
+<ul>
+<li>⌘ + enter: 切换全屏</li>
+<li>⌘ + 数字: 切换标签页。⌘ + 方向键 按方向切换标签页。(之后发现了再补充～)   </li>
+</ul>
+<p><strong>zsh</strong><br>有强大的自动补全功能，github上有很多漂亮的主题<br>使用brew进行安装    brew install zsh<br>这个安装好之后再安oh-my-zsh，因为这个是之前安的，这里先不说具体安装步骤了，使用chsh -s /bin/zsh切换到zsh上，重启并开始使用zsh (打开一个新的终端窗口便可…)   </p>
+<p>等等。。。这样根本体现不出什么强大？嗯，是的，接下来安装三大插件YouCompleteMe、Ctrl P、autojump，前两个我是安装了<a href="https://github.com/wklken/k-vim" target="_blank" rel="external">k-vim</a>他把这些都安好了，照着这个教程一步一步走就好，安装完成之后检查一下是否可以使用，我的YouCompleteMe、Ctrl P在安装完之后都不可以正常使用，这个时候分别去官网查看一下应该如何修改配置文件<br>vim .vimrc.bundles    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let g:ctrlp_map = &apos;&lt;c-p&gt;&apos;</span><br><span class="line">let g:ctrlp_cmd = &apos;CtrlP&apos;</span><br></pre></td></tr></table></figure>
+<p>cd ~/.vim/bundle/YouCompleteMe  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./install.py</span><br></pre></td></tr></table></figure>
+<p>这个下的很慢。。。<br><strong>autojump</strong><br>之前安装过，但是不能使用，重新安装，安装过程会有提示，按照提示来，会要求卸载重新安，而且要在<br>vim ~/.zshrc   后添加这样一句话:    </p>
+<pre><code>[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] &amp;&amp; . $(brew --prefix)/etc/profile.d/autojump.sh
+</code></pre><p>未完待续。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://taoran12.github.io/2016/10/26/终端环境配置/" data-id="ciur40int001024j3dxdu128y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件/">软件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-98年" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -105,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciuns7g330007ipj34r324r7e" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciur40ima000024j39zfa9lnp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -134,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciuns7g53001bipj384hl2rq0" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciur40inx001424j3q0z8eu8a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciuns7g510019ipj3b3yy8fqg" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciur40inn000v24j3ojgonccx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciuns7g2n0000ipj3si9vl39z" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciur40imn000524j33t345am5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/">django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/部署/">部署</a></li></ul>
@@ -263,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciuns7g2t0001ipj3amu54q0f" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciur40in5000g24j3r22b89my" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -294,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciuns7g350008ipj3pqymtlis" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciur40imq000724j3vfws7j86" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +391,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciuns7g4p0011ipj39yk87ih5" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciur40inf000p24j3uej18oal" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
@@ -381,7 +432,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciuns7g4n000zipj3ibif9737" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciur40inb000m24j3zyx7074y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
@@ -433,79 +484,10 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/09/arctic-ocean总结/" data-id="ciuns7g2z0004ipj37bjtmf4u" class="article-share-link">Delen</a>
+      <a data-url="http://taoran12.github.io/2016/07/09/arctic-ocean总结/" data-id="ciur40iml000424j3l9eh5nhx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-三个引号" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/08/三个引号/" class="article-date">
-  <time datetime="2016-07-08T12:44:35.000Z" itemprop="datePublished">2016-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/三个引号/">三个引号</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今昨两天，真是被markdown的模版折腾的够呛啊，先说下现在的项目吧，现在RD提测时是要很土在mr上的comment上写，而我们的arctic－ocean，可以将评论的内容调用gitlab的接口，自动提交评论并且发送邮件，  技术上有一点要求将提交的内容变成markdown的格式，再调用gitlab的接口。<br>首先我先了解了一下Markdown的语法，看怎么可以写成表格  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| project_name | project_function | system_involved |   </span><br><span class="line">| -------- | -------- | --------|   </span><br><span class="line">| cell <span class="number">1</span> | cell <span class="number">2</span> | cell3 |   </span><br><span class="line">| project_name | project_function | system_involved |    </span><br><span class="line">| -------- | -------- | --------|</span><br></pre></td></tr></table></figure>
-<p>于是我很费劲的写成了这样：    </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body1 = '|'+ 'project_name' +'|'+ 'project_function'+ '|'+'system_involved'+'|'+'database_   </span><br><span class="line">changes'+'|'+'permissions_modify'+'|'+'people_concerned'+'|'+'testing_concerns'+'|'+'scheduled_launch_   </span><br><span class="line">time'+'|'+'remind_somebody'+'|' +'\n'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'   </span><br><span class="line">+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'--------'+'|'+'\n'+'|'+ project_   </span><br><span class="line">name+'|'+project_function+'|'+system_involved+'|'+database_changes+'|'+permissions_modify+'|'+people_   </span><br><span class="line">concerned+'|'+testing_concerns+'|'+scheduled_launch_time+'|'+remind_somebody+'|</span><br></pre></td></tr></table></figure>
-<p>就是这样用字符串拼接的方式，虽然能够实现功能，但是真的不好些，而且也不好看，马越看后，先是让我写成一个模版，即建立一个新的文件，然后<br>import，这是一方面，更重要的是体会到了三个引号的强大，完全可以想如下这样写啊。三个引号是可以保留空行的，当马越跟我说可以这样的时候，<br>瞬间一阵风吹来似的，自己好蠢的写了好久，结果其实是可以直接复制过来的。     </p>
-<pre><code class="python"><span class="comment"># coding: utf-8</span>
-comment_template = <span class="string">u'''\
-| header 1 | header 2 |
-| -------- | -------- |
-| 测试项目名称 | {project_name}|
-| 测试功能 | {project_function}|
-| 提测涉及系统 | {system_involved} |
-| 是否有数据库修改 | {need_to_change_db_schema}|
-| 是否有权限修改 | {need_to_change_permissions} |
-| 涉及人员 | {developers} |
-| 测试关注点 | {checking_point} |
-| 计划上线时间| {scheduled_launch_time} |
-| 提醒某人 | {remind_somebody} |'''</span>
-</code></pre>
-<p>view中这样：用string.format（)     </p>
-<pre><code class="python">body = template.comment_template.format(
-            project_name=project_name,
-            project_function=project_function,
-            system_involved=system_involved,
-            need_to_change_db_schema=need_to_change_db_schema,
-            need_to_change_permissions=need_to_change_permissions,
-            developers=developers,
-            checking_point=checking_point,
-            scheduled_launch_time=scheduled_launch_time,
-            remind_somebody=remind_somebody)
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/08/三个引号/" data-id="ciuns7g4a000xipj3uql6tmow" class="article-share-link">Delen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
     </footer>
   </div>
@@ -528,9 +510,9 @@ comment_template = <span class="string">u'''\
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日报/">日报</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日报/">日报</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目/">项目</a></li></ul>
     </div>
   </div>
 
@@ -540,14 +522,14 @@ comment_template = <span class="string">u'''\
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/ubantu/" style="font-size: 10px;">ubantu</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日报/" style="font-size: 13.33px;">日报</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/部署/" style="font-size: 10px;">部署</a> <a href="/tags/项目/" style="font-size: 13.33px;">项目</a>
+      <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/ubantu/" style="font-size: 10px;">ubantu</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日报/" style="font-size: 13.33px;">日报</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a> <a href="/tags/部署/" style="font-size: 10px;">部署</a> <a href="/tags/项目/" style="font-size: 13.33px;">项目</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
     </div>
@@ -557,9 +539,13 @@ comment_template = <span class="string">u'''\
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/26/终端环境配置/">终端环境配置</a>
+          </li>
         
           <li>
             <a href="/2016/10/22/98年/">98年</a>
@@ -575,10 +561,6 @@ comment_template = <span class="string">u'''\
         
           <li>
             <a href="/2016/07/29/djando项目部署/">djando项目部署</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/24/git分支/">git分支</a>
           </li>
         
       </ul>
