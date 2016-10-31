@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="title: 最长无重复子串date: 2016-10-31 14:20:45
 tags: 算法对于一个字符串,请设计一个高效算法，找到字符串的最长无重复字符的子串长度。给定一个字符串A及它的长度n，请返回它的最长无重复字符子串长度。保证A中字符全部为小写英文字符，且长度小于等于500。测试样例：“aabcb”,5返回：3   
-```class DistinctSubstring:    de">
+123456789101112131415161718192021">
 <meta property="og:type" content="article">
 <meta property="og:title" content="taoran12">
 <meta property="og:url" content="http://taoran12.github.io/2016/10/31/最长无重复子串/index.html">
 <meta property="og:site_name" content="taoran12">
 <meta property="og:description" content="title: 最长无重复子串date: 2016-10-31 14:20:45
 tags: 算法对于一个字符串,请设计一个高效算法，找到字符串的最长无重复字符的子串长度。给定一个字符串A及它的长度n，请返回它的最长无重复字符子串长度。保证A中字符全部为小写英文字符，且长度小于等于500。测试样例：“aabcb”,5返回：3   
-```class DistinctSubstring:    de">
-<meta property="og:updated_time" content="2016-10-31T06:20:48.000Z">
+123456789101112131415161718192021">
+<meta property="og:updated_time" content="2016-10-31T06:23:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="taoran12">
 <meta name="twitter:description" content="title: 最长无重复子串date: 2016-10-31 14:20:45
 tags: 算法对于一个字符串,请设计一个高效算法，找到字符串的最长无重复字符的子串长度。给定一个字符串A及它的长度n，请返回它的最长无重复字符子串长度。保证A中字符全部为小写英文字符，且长度小于等于500。测试样例：“aabcb”,5返回：3   
-```class DistinctSubstring:    de">
+123456789101112131415161718192021">
   
     <link rel="alternate" href="/atom.xml" title="taoran12" type="application/atom+xml">
   
@@ -98,32 +98,11 @@ tags: 算法对于一个字符串,请设计一个高效算法，找到字符串�
         <hr>
 <p>title: 最长无重复子串<br>date: 2016-10-31 14:20:45</p>
 <h2 id="tags-算法"><a href="#tags-算法" class="headerlink" title="tags: 算法"></a>tags: 算法</h2><p>对于一个字符串,请设计一个高效算法，找到字符串的最长无重复字符的子串长度。<br>给定一个字符串A及它的长度n，请返回它的最长无重复字符子串长度。保证A中字符全部为小写英文字符，且长度小于等于500。<br>测试样例：<br>“aabcb”,5<br>返回：3   </p>
-<p>```<br>class DistinctSubstring:<br>    def longestSubstring(self, A, n):</p>
-<pre><code># write code here
-dic = {}
-pre = -1
-l = 0
-ltmp = 0
-for i in range(0,n):
-    if not dic.has_key(A[i]):
-        dic[A[i]] = i
-        ltmp = i - pre
-    else:
-        if i - dic[A[i]] &lt; i - pre:
-            ltmp = i - dic[A[i]]
-            pre = dic[A[i]]
-        else:
-            ltmp = i - pre
-        dic[A[i]] = i
-    if ltmp &gt; l:
-        l = ltmp
-return l   
-</code></pre><p>``</p>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DistinctSubstring</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span><span class="params">(self, A, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        pre = <span class="number">-1</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        ltmp = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,n):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> dic.has_key(A[i]):</span><br><span class="line">                dic[A[i]] = i</span><br><span class="line">                ltmp = i - pre</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> i - dic[A[i]] &lt; i - pre:</span><br><span class="line">                    ltmp = i - dic[A[i]]</span><br><span class="line">                    pre = dic[A[i]]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    ltmp = i - pre</span><br><span class="line">                dic[A[i]] = i</span><br><span class="line">            <span class="keyword">if</span> ltmp &gt; l:</span><br><span class="line">                l = ltmp</span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/31/最长无重复子串/" data-id="ciuxofsxb0010aej3jkyxc2o1" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/31/最长无重复子串/" data-id="ciuxoiy07000xbhj34hulspx2" class="article-share-link">Share</a>
       
       
     </footer>

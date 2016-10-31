@@ -93,32 +93,11 @@
         <hr>
 <p>title: 最长无重复子串<br>date: 2016-10-31 14:20:45</p>
 <h2 id="tags-算法"><a href="#tags-算法" class="headerlink" title="tags: 算法"></a>tags: 算法</h2><p>对于一个字符串,请设计一个高效算法，找到字符串的最长无重复字符的子串长度。<br>给定一个字符串A及它的长度n，请返回它的最长无重复字符子串长度。保证A中字符全部为小写英文字符，且长度小于等于500。<br>测试样例：<br>“aabcb”,5<br>返回：3   </p>
-<p>```<br>class DistinctSubstring:<br>    def longestSubstring(self, A, n):</p>
-<pre><code># write code here
-dic = {}
-pre = -1
-l = 0
-ltmp = 0
-for i in range(0,n):
-    if not dic.has_key(A[i]):
-        dic[A[i]] = i
-        ltmp = i - pre
-    else:
-        if i - dic[A[i]] &lt; i - pre:
-            ltmp = i - dic[A[i]]
-            pre = dic[A[i]]
-        else:
-            ltmp = i - pre
-        dic[A[i]] = i
-    if ltmp &gt; l:
-        l = ltmp
-return l   
-</code></pre><p>``</p>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DistinctSubstring</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span><span class="params">(self, A, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        pre = <span class="number">-1</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        ltmp = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,n):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> dic.has_key(A[i]):</span><br><span class="line">                dic[A[i]] = i</span><br><span class="line">                ltmp = i - pre</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> i - dic[A[i]] &lt; i - pre:</span><br><span class="line">                    ltmp = i - dic[A[i]]</span><br><span class="line">                    pre = dic[A[i]]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    ltmp = i - pre</span><br><span class="line">                dic[A[i]] = i</span><br><span class="line">            <span class="keyword">if</span> ltmp &gt; l:</span><br><span class="line">                l = ltmp</span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/31/最长无重复子串/" data-id="ciuxofsxb0010aej3jkyxc2o1" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/31/最长无重复子串/" data-id="ciuxoiy07000xbhj34hulspx2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +146,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/26/终端环境配置/" data-id="ciuxofsxi0014aej3sftzo1fq" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/26/终端环境配置/" data-id="ciuxoiy0k0012bhj3hirh6ss7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件/">软件</a></li></ul>
@@ -206,7 +185,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciuxofsve0000aej3yrm4fk86" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciuxoixyo0000bhj3ni7cfi1s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -235,7 +214,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciuxofsxk0016aej3tu1m9zko" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciuxoiy13001vbhj3orjr532e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +259,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciuxofsx9000xaej38hjoobns" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciuxoixzz000sbhj365lkqct1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +304,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciuxofsvv0005aej3sjlw5g40" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciuxoixyy0003bhj3lnnslkfl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/">django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/部署/">部署</a></li></ul>
@@ -364,7 +343,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciuxofsw00008aej31z4uljp3" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciuxoixz10006bhj3yn5xot2y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -395,7 +374,7 @@ return l
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciuxofsw3000aaej3o0vuab0b" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciuxoixz40008bhj3khp2xa1g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,7 +420,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciuxofsx0000qaej3lqr4pxrv" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciuxoixzx000pbhj3381omsru" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
@@ -482,7 +461,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciuxofswy000oaej328mtrk46" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciuxoixzu000nbhj3ep2ha512" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
