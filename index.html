@@ -78,6 +78,35 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-最长无重复子串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/最长无重复子串/" class="article-date">
+  <time datetime="2016-10-31T06:08:08.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 最长无重复子串<br>date: 2016-10-31 14:08:08</p>
+<h2 id="tags-算法"><a href="#tags-算法" class="headerlink" title="tags: 算法"></a>tags: 算法</h2><p>对于一个字符串,请设计一个高效算法，找到字符串的最长无重复字符的子串长度。<br>给定一个字符串A及它的长度n，请返回它的最长无重复字符子串长度。保证A中字符全部为小写英文字符，且长度小于等于500。<br>测试样例：<br>“aabcb”,5<br>返回：3   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class DistinctSubstring:</span><br><span class="line">    def longestSubstring(self, A, n):</span><br><span class="line">        # write code here</span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        pre = -1</span><br><span class="line">        l = 0</span><br><span class="line">        ltmp = 0</span><br><span class="line">        for i in range(0,n):</span><br><span class="line">            if not dic.has_key(A[i]):</span><br><span class="line">                dic[A[i]] = i</span><br><span class="line">                ltmp = i - pre</span><br><span class="line">            else:</span><br><span class="line">                if i - dic[A[i]] &lt; i - pre:</span><br><span class="line">                    ltmp = i - dic[A[i]]</span><br><span class="line">                    pre = dic[A[i]]</span><br><span class="line">                else:</span><br><span class="line">                    ltmp = i - pre</span><br><span class="line">                dic[A[i]] = i</span><br><span class="line">            if ltmp &gt; l:</span><br><span class="line">                l = ltmp</span><br><span class="line">        return l</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://taoran12.github.io/2016/10/31/最长无重复子串/" data-id="ciuxo8h51000r6hj30f5ywjor" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-终端环境配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/26/终端环境配置/" class="article-date">
@@ -117,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/26/终端环境配置/" data-id="ciur40int001024j3dxdu128y" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/26/终端环境配置/" data-id="ciuxo8h6k001q6hj35dxdvnl6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件/">软件</a></li></ul>
@@ -156,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciur40ima000024j39zfa9lnp" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/22/98年/" data-id="ciuxo8h4q000f6hj3s08vn58y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -185,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciur40inx001424j3q0z8eu8a" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/10/21/链表反转/" data-id="ciuxo8h6m001r6hj3vgj8uw8v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciur40inn000v24j3ojgonccx" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/08/06/晒黑了/" data-id="ciuxo8h6c001l6hj3hugku1uc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciur40imn000524j33t345am5" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/29/djando项目部署/" data-id="ciuxo8h3t00006hj3520k61jt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/">django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubantu/">ubantu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/部署/">部署</a></li></ul>
@@ -314,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciur40in5000g24j3r22b89my" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git分支/" data-id="ciuxo8h3y00016hj3l7umobgy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -345,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciur40imq000724j3vfws7j86" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/24/git版本回退的总结/" data-id="ciuxo8h4700066hj39tafzrcm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,7 +420,7 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciur40inf000p24j3uej18oal" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/13/字典的update/" data-id="ciuxo8h6g001n6hj3v2ytxv4l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
@@ -432,62 +461,10 @@ b.update(a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciur40inb000m24j3zyx7074y" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/12/你看你又懵了/" data-id="ciuxo8h4v000n6hj3az2305ee" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日报/">日报</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-arctic-ocean总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/09/arctic-ocean总结/" class="article-date">
-  <time datetime="2016-07-09T10:16:59.000Z" itemprop="datePublished">2016-07-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/09/arctic-ocean总结/">arctic-ocean总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。<br>这个项目设计一下知识点：<br>1、http/api     </p>
-<p><1>首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token<br>比如这样的url：code.vipkid.com.cn/lib/api/groups?private_token=R7sdfhef-d5jZQ6sfjwR</1></p>
-<p><2>请求用的是requests，马越说这个是业界口碑很好的，什么urllib之类的不如这个好<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(url)</span><br><span class="line">response.json()      </span><br><span class="line">r = requests.post(url, data=&#123;<span class="string">'body'</span>: body&#125;)</span><br></pre></td></tr></table></figure></2></p>
-<p>2、markdown<br>markdown其实就是一个字符串，可以在编辑器里传入一个字符串，然后会解析成markdown的格式，刚开始我用的就是字符串拼接的方式，在上篇博客中有所介绍，后来用了三个引号，虽然本质相同，但是方便很多，专门建一个模版，然后导入，使用string({key}).format(key=value)<br>3、python web<br>当然这是web开发项目，涉及到表单之类的知识。<br>4、e-mail<br>邮件部分是学长写的，我直接导入调用就行了    </p>
-<pre><code class="python"><span class="keyword">from</span> envelopes <span class="keyword">import</span> Envelope
-</code></pre>
-<p>通过这次项目，学到很多有关编程优雅发面的东西：   </p>
-<p><1>关于url的命名，最好是要让人能够通过url看出这一个页面时用来做什么的  比如：   </1></p>
-<pre><code class="python"><span class="meta">@bp.route('/group/&lt;id&gt;/projects') </span>
-<span class="meta">@bp.route('/group/&lt;id&gt;/project/&lt;pid&gt;/mr')</span>
-</code></pre>
-<p><2>可以重复利用的代码写在libs中，这样不仅可以重复利用，也可以使代码看起来很简洁易懂。比如对于gitlab接口的操作我都写在了libs\api\gitlab.py中。   </2></p>
-<p><3>对gitlab的请求url前缀是相同的 那么可以定义API_PREFIX = ‘<a href="https://code.vipkid.com.cn/api/v3/&#39;，然后每个url字符串拼接,马越说这样是最好的注释，别人可以看懂这是什么。" target="_blank" rel="external">https://code.vipkid.com.cn/api/v3/&#39;，然后每个url字符串拼接,马越说这样是最好的注释，别人可以看懂这是什么。</a>   </3></p>
-<p>今天早上马越给我看了一个它们现在正在写的程序，代码封装的特别好，不会使用requests.get(url)这样的写法，因为这样不能让人知道get了些什么，有什么是可以get到的，他们使用了Field entity 这些我还不懂，也许以后会慢慢接触到吧！<br>还有就是提交代码的时候，不要提交.pyc 文件 .env文件！<br>可能还有些东西，以后想起来再加上吧。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/09/arctic-ocean总结/" data-id="ciur40iml000424j3l9eh5nhx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
 
     </footer>
   </div>
@@ -544,6 +521,10 @@ b.update(a)
       <ul>
         
           <li>
+            <a href="/2016/10/31/最长无重复子串/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/26/终端环境配置/">终端环境配置</a>
           </li>
         
@@ -557,10 +538,6 @@ b.update(a)
         
           <li>
             <a href="/2016/08/06/晒黑了/">晒黑了</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/29/djando项目部署/">djando项目部署</a>
           </li>
         
       </ul>

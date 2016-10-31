@@ -78,6 +78,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-arctic-ocean总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/09/arctic-ocean总结/" class="article-date">
+  <time datetime="2016-07-09T10:16:59.000Z" itemprop="datePublished">2016-07-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/09/arctic-ocean总结/">arctic-ocean总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这一周以来，就是做这个项目了，遇到很多坑，学到很多东西。<br>这个项目设计一下知识点：<br>1、http/api     </p>
+<p><1>首先，看gitlab的help，api部分，里面对于访问group,project,merge_request的url有介绍，可以利用postman模拟访问，但是后面都要跟上自己的token<br>比如这样的url：code.vipkid.com.cn/lib/api/groups?private_token=R7sdfhef-d5jZQ6sfjwR</1></p>
+<p><2>请求用的是requests，马越说这个是业界口碑很好的，什么urllib之类的不如这个好<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(url)</span><br><span class="line">response.json()      </span><br><span class="line">r = requests.post(url, data=&#123;<span class="string">'body'</span>: body&#125;)</span><br></pre></td></tr></table></figure></2></p>
+<p>2、markdown<br>markdown其实就是一个字符串，可以在编辑器里传入一个字符串，然后会解析成markdown的格式，刚开始我用的就是字符串拼接的方式，在上篇博客中有所介绍，后来用了三个引号，虽然本质相同，但是方便很多，专门建一个模版，然后导入，使用string({key}).format(key=value)<br>3、python web<br>当然这是web开发项目，涉及到表单之类的知识。<br>4、e-mail<br>邮件部分是学长写的，我直接导入调用就行了    </p>
+<pre><code class="python"><span class="keyword">from</span> envelopes <span class="keyword">import</span> Envelope
+</code></pre>
+<p>通过这次项目，学到很多有关编程优雅发面的东西：   </p>
+<p><1>关于url的命名，最好是要让人能够通过url看出这一个页面时用来做什么的  比如：   </1></p>
+<pre><code class="python"><span class="meta">@bp.route('/group/&lt;id&gt;/projects') </span>
+<span class="meta">@bp.route('/group/&lt;id&gt;/project/&lt;pid&gt;/mr')</span>
+</code></pre>
+<p><2>可以重复利用的代码写在libs中，这样不仅可以重复利用，也可以使代码看起来很简洁易懂。比如对于gitlab接口的操作我都写在了libs\api\gitlab.py中。   </2></p>
+<p><3>对gitlab的请求url前缀是相同的 那么可以定义API_PREFIX = ‘<a href="https://code.vipkid.com.cn/api/v3/&#39;，然后每个url字符串拼接,马越说这样是最好的注释，别人可以看懂这是什么。" target="_blank" rel="external">https://code.vipkid.com.cn/api/v3/&#39;，然后每个url字符串拼接,马越说这样是最好的注释，别人可以看懂这是什么。</a>   </3></p>
+<p>今天早上马越给我看了一个它们现在正在写的程序，代码封装的特别好，不会使用requests.get(url)这样的写法，因为这样不能让人知道get了些什么，有什么是可以get到的，他们使用了Field entity 这些我还不懂，也许以后会慢慢接触到吧！<br>还有就是提交代码的时候，不要提交.pyc 文件 .env文件！<br>可能还有些东西，以后想起来再加上吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://taoran12.github.io/2016/07/09/arctic-ocean总结/" data-id="ciuxo8h4300036hj37cbrb0mp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-三个引号" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/08/三个引号/" class="article-date">
@@ -135,7 +187,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/07/08/三个引号/" data-id="ciur40ind000o24j3yacvg0t7" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/07/08/三个引号/" data-id="ciuxo8h4t000k6hj3spm6k35j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -175,7 +227,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/25/level-test总结/" data-id="ciur40inh000q24j3v3coge5c" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/25/level-test总结/" data-id="ciuxo8h4y000p6hj3xi342p5l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目/">项目</a></li></ul>
@@ -216,7 +268,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/22/git使用总结/" data-id="ciur40img000224j3pfy1srbp" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/22/git使用总结/" data-id="ciuxo8h4500046hj3s5e3egvd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -259,7 +311,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/19/用python实现链表/" data-id="ciur40inw001224j3gw3yvf4v" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/19/用python实现链表/" data-id="ciuxo8h6q001t6hj3ra8s9216" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
@@ -302,7 +354,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/14/深复制与浅复制的区别/" data-id="ciur40ins000y24j3mvxbhp6s" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/14/深复制与浅复制的区别/" data-id="ciuxo8h63001j6hj37czmbh4v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +395,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/14/排序总结/" data-id="ciur40inl000t24j391me3bzs" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/14/排序总结/" data-id="ciuxo8h6i001o6hj3l4aid7z1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -398,7 +450,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/06/leetcode-121/" data-id="ciur40ims000924j3x83dz4cj" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/06/leetcode-121/" data-id="ciuxo8h4f000a6hj3gg3xbeyi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -456,7 +508,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-88/" data-id="ciur40in9000l24j32bhbhwu6" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-88/" data-id="ciuxo8h4k000b6hj3b6jc2mae" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -506,54 +558,7 @@ comment_template = <span class="string">u'''\
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-169/" data-id="ciur40in0000d24j3yigyfzbh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-leetcode-217" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/05/leetcode-217/" class="article-date">
-  <time datetime="2016-06-05T11:44:51.000Z" itemprop="datePublished">2016-06-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/05/leetcode-217/">leetcode 217</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="217-Contains-Duplicate"><a href="#217-Contains-Duplicate" class="headerlink" title="217. Contains Duplicate"></a>217. Contains Duplicate</h1><p><em>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array,and it should return false if every element is distinct.</em></p>
-<hr>
-<pre><code>class Solution(object):
-    def containsDuplicate(self, nums):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: bool
-        &quot;&quot;&quot;
-        return len(set(nums))&lt;len(nums)
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-217/" data-id="ciur40in7000i24j3gqkpwekw" class="article-share-link">Share</a>
+      <a data-url="http://taoran12.github.io/2016/06/05/leetcode-169/" data-id="ciuxo8h4d00086hj3kp412a8g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -613,6 +618,10 @@ comment_template = <span class="string">u'''\
       <ul>
         
           <li>
+            <a href="/2016/10/31/最长无重复子串/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/26/终端环境配置/">终端环境配置</a>
           </li>
         
@@ -626,10 +635,6 @@ comment_template = <span class="string">u'''\
         
           <li>
             <a href="/2016/08/06/晒黑了/">晒黑了</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/29/djando项目部署/">djando项目部署</a>
           </li>
         
       </ul>
